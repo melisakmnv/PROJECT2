@@ -7,6 +7,8 @@ require("./config/mongodb")
 const express = require("express");
 const hbs = require("hbs");
 const path = require("path");
+const flash = require("connect-flash");
+const session = require("express-session");
 
 // ---------------------//
 //  STEP 2 : Base Setup //
@@ -19,10 +21,11 @@ app.set("view engine", "hbs");
 app.set("views", __dirname + "/views")
 app.use(express.static(path.join(__dirname , "/public")));
 hbs.registerPartials(path.join(__dirname, "views/partials"));
+hbs.registerPartials(path.join(__dirname,"views/auth/partials"))
 app.use(express.urlencoded({ extended: false })); // So I past this line to be able to read data [object: null prototype {....}]
 app.use(express.json({ extended: false})); // This allows to test on postman and display data in terminal ==> {} data empty
 
-
+app.use(flash());
 
 // -------------------------//
 // STEP 3 : Routes handling //
