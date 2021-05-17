@@ -6,7 +6,7 @@ const UserModel = require("../models/userModel");
 
 
 router.get("/signin", (req, res) => {
-    res.render("partials/signin.hbs")
+    res.render("auth/signin.hbs")
 })
 
 
@@ -36,7 +36,7 @@ router.get("/signin", (req, res) => {
 // })
 
 router.get("/signup", (req, res) => {
-    res.render("partials/signup.hbs")
+    res.render("auth/signup.hbs")
 });
 
 // POST - ADD new user => Need to be modified => Check email, check password 

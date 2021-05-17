@@ -36,7 +36,6 @@ const indexRouter = require("./routes/index");
 // ------ PREFIX router ------ //
 
 app.use("/", indexRouter);
-// app.use("/join", authRouter); 
 app.use("/auth", require("./routes/auth"));
 
 
