@@ -51,7 +51,7 @@ router.post("/signup", (req, res) => {
         console.error(err);
         res.redirect("/auth/signup")
     })
-})
+});
 
 
 

@@ -5,12 +5,12 @@ router.get("/", (req, res) => {
     res.render("index.hbs") // comment : when we use layout.hbs => content is duplicate 
 });
 
-router.get("/road", (req, res) => {
-    res.render("road.hbs")
+router.get("/destinations", (req, res) => {
+    res.render("destinations.hbs")
 })
 
-router.get("/contact", (req, res) => {
-    res.render("contact.hbs")
+router.get("/aboutus", (req, res) => {
+    res.render("whoAreWe.hbs")
 })
 
 module.exports = router;

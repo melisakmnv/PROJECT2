@@ -29,14 +29,14 @@ app.use(express.json({ extended: false})); // This allows to test on postman and
 // -------------------------//
 
 // ------ require routes ------ //
-const indexRouter = require("./routes/index");
+const indexRouter = require("./routes/indexRoute");
 // const authRouter = require("./routes/auth")
 
 
 // ------ PREFIX router ------ //
 
 app.use("/", indexRouter);
-app.use("/auth", require("./routes/auth"));
+app.use("/auth", require("./routes/authRoute"));
 
 
 // ---------------------------------//
