@@ -1,0 +1,189 @@
+
+* {
+    box-sizing: border-box;
+}
+
+/* #join {
+    border: 1px solid black;
+} */
+
+.join_section {
+    text-align: center;
+    background-color: burlywood;
+}
+
+.main_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: -20px 0 50px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff8dc;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 780px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.form_container form{
+    background-color: #fff8dc;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    color:cadetblue
+}
+
+.form_container input{
+    background-color: #e7e7e7;
+    border-radius: 5px;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%
+}
+
+.form_container input:focus {
+    outline: none;
+}
+
+button {
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    background-color: rgb(107, 174, 177);
+    padding: 10px 35px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: white;
+    transition: transform 80ms ease-in;
+    box-shadow: 0 5px 80px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+    margin-top: 15px;
+
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+ 
+button.invisible_btn {
+    background-color: transparent;
+    border-color: white;
+} 
+/* 
+.form_container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+} */
+
+.form_container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.signin_container {
+    width: 50%;
+    left: 0;
+    /* z-index: 2; */
+} 
+
+.signup_container {
+    width: 50%;
+    left: 0;
+    /* opacity: 0; */
+    /* z-index: 1; */
+}
+
+.overlay_container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    /* z-index: 100; */
+}
+
+.overlay {
+    background-color: cadetblue;
+    color: white;
+    position: relative;
+    /* left: -100%; */
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+}
+
+.overlay_panel {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+/* */
+.overlay_right {
+    /* right:0; */
+    transform: translateX(0);
+}
+
+/* I modified this -50% to 0 and remove right */
+.overlay_left {
+    transform: translateX(0); 
+}
+
+.container.right_panel_active .signin_container {
+    transform: translateX(100%);
+}
+
+.container.right_panel_active .overlay_container {
+    transform: translateX(-100% );
+}
+
+ .container.right_panel_active .signup_container {
+     transform: translateX(100%);
+     opacity: 1;
+     z-index: 5;
+ }
+
+ .container.right_panel_active .overlay {
+     transform: translateX(50%);
+ }
+
+ .container.right_panel_active .overlay_left {
+     transform: translateX(0);
+ }
+ .container.right_panel_active .overlay_right {
+     transform: translateX(50%);
+ }
+
+ /* Transform text to modify */
