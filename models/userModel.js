@@ -2,16 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    firstname: {
+    username: {
         type: String,
-        required: true
-    },
-    lastname: {
-        type: String,
-        required: true
-    },
-    location: {
-        type:String,
+        unique: true,
         required: true
     },
     email: {
@@ -23,6 +16,23 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
+    isAdmin : {
+        type: Boolean,
+        default: false
+    },
+    avatar: {
+        type: String,
+        default: "https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png"
+    },
+    description: {
+        type: String,
+        default: ""
+    },
+    city: {
+        type:String,
+        required: true
+    },
+    // wishlist: 
 },
     { timestamps: true }
 );

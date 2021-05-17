@@ -13,17 +13,23 @@ router.post('/signin', async (req, res) => {
   const foundUser = await UserModel.findOne({ email: email });
   if (!foundUser) {
       res.redirect("/auth/signin")
+
+      // ----- postman test ----- //
     // return res.status(400).json({ errors: [{ msg: 'No user' }] }); // to see on the console // Postman
       // ------- need flash message ------- //
   } else {
     const isSamePassword = bcrypt.compareSync(password, foundUser.password);
     if (!isSamePassword) {
         res.redirect("/auth/signin")
+
+        // ----- postman test ----- //
     //   return res
     //     .status(400)
     //     .json({ errors: [{ msg: 'Password is not correct' }] });
       // ------- need flash message ------- //
     } else {
+
+        // ----- postman test ----- //
     //   res.send('Yayyyy');
       // ------- need flash message ------- //
     res.redirect("/")
@@ -46,6 +52,8 @@ router.post('/signup', async (req, res, next) => {
 
     if (foundUser) {
         res.redirect("/auth/signup")
+
+        // ----- postman test ----- //
     //   return res
     //     .status(400)
     //     .json({ errors: [{ msg: 'This Email is already used' }] });
@@ -56,13 +64,15 @@ router.post('/signup', async (req, res, next) => {
       newUser.password = hashedPassword;
       await UserModel.create(newUser);
       res.redirect("/auth/signin")
+
+      // ----- postman test ----- //
     //   res.send('You are registered !');
       // ------- need flash message ------- //
 
     }
   } catch (err) {
     console.error(err);
-    // return res.status(400).json({ errors: [{ msg: 'problem' }] });
+    return res.status(400).json({ errors: [{ msg: 'problem' }] });
       // ------- need flash message ------- //
   }
 });
