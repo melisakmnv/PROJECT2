@@ -3,7 +3,7 @@ const TagModel = require("../models/tagModel");
 
 const tags = [
   {
-    label: "Family-firendly",
+    label: "Family-friendly",
   },
   {
     label: "Foodie",
