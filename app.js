@@ -40,6 +40,7 @@ const indexRouter = require("./routes/indexRoute");
 
 app.use("/", indexRouter);
 app.use("/auth", require("./routes/authRoute"));
+app.use("/dashboard", require("./routes/dashboardRoute"));
 
 
 // ---------------------------------//
