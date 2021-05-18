@@ -4,6 +4,14 @@
 @import url("./search_bar.css");
 @import url("./myprofile.css");
 
+
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+
+/* BASIC SETUP */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,11 +19,12 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Architects Daughter', cursive;
 }
 
 
 
+/* BACKGROUND IMAGE */
 .section_one {
     background: url(/images/bg.jpg) fixed;
     background-size: cover;
@@ -23,6 +32,7 @@ body {
 }
 
 
+/* TITLE */
 .first-view h1 {
     color:rgb(240, 235, 227);
     font-size: 10em;
@@ -33,6 +43,7 @@ body {
     margin: 50px;
 }
 
+/* SUBTITLE */
 .first-view h3 {
     color:rgb(240, 235, 227);
     font-size: 5em;
