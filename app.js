@@ -37,7 +37,7 @@ app.use(
     cookie: {
       // sameSite: 'none',
       httpOnly: true,
-      maxAge: 60000,
+      maxAge: 600000,
     },
     // store: new MongoStore({ // la session est stockée en bdd
     //   mongooseConnection: mongoose.connection,

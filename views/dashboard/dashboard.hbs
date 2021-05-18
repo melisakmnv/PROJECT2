@@ -1,7 +1,7 @@
-<section id="my-dashboard">
+<section id="dashboard-title">
   <h1>MY DASHBOARD</h1>
 </section>
-<section>
+<section id="dashboard-carousel">
   <div class="carousel">
     {{#each users.wishlist}}
       <div>
@@ -16,21 +16,21 @@
     {{/each}}
   </div>
 </section>
-<section>
+<section id="dashboard-menu">
+<a href="/">
+    <img id="dashboard-img-1" src="/images/dashboard_map-icon.png" alt="Map icon">
+    <h2>Access map</h2>
+</a>
 <div>
-    <img src="./../../public/images/dashboard_map-icon.png" alt="Map icon">
+    <img id="dashboard-img-2" src="/images/dashboard_add-destination-icon.png" alt="Add destination icon">
+    <h2></h2>
+</div>
+<div>
+    <img id="dashboard-img-3" src="/images/dashboard_mydestinations-icon.png" alt="My destinations icon">
     <h2>Access map</h2>
 </div>
 <div>
-    <img src="./../../public/images/dashboard_add-destination-icon.png" alt="Add destination icon">
-    <h2>Access map</h2>
-</div>
-<div>
-    <img src="./../../public/images/dashboard_mydestinations-icon.png" alt="My destinations icon">
-    <h2>Access map</h2>
-</div>
-<div>
-    <img src="./../../public/images/dashboard_myprofile-icon.png" alt="My profile icon">
+    <img id="dashboard-img-4" src="/images/dashboard_myprofile-icon.png" alt="My profile icon">
     <h2>Access map</h2>
 </div>
 </section>

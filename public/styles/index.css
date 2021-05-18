@@ -3,8 +3,8 @@
 @import url("./reset.css");
 @import url("./search_bar.css");
 @import url("./myprofile.css");
-
-
+@import url("./dashboard.css");
+@import url("./footer.css");
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
@@ -40,7 +40,7 @@ body {
     text-shadow: 10px 10px 10px rgba(28,12,7,0.86);
     -webkit-text-stroke-width: 6px;
     -webkit-text-stroke-color: teal;
-    margin: 50px;
+    margin-bottom: 50px;
 }
 
 /* SUBTITLE */

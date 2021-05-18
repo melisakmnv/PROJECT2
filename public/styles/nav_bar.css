@@ -5,8 +5,10 @@
 }
 .main_head {
     width: 100%;
+    height: 10vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav_bar {
@@ -22,4 +24,9 @@
 
 .link_item:active {
     transform: scale(0.95);
+}
+
+#logo-nav {
+    width: 80px;
+    margin: 10px;
 }
