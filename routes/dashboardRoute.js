@@ -2,12 +2,19 @@ const express = require("express");
 const router = new express.Router();
 
 const UserModel = require("./../models/userModel");
+const ActivityModel = require("./../models/activityModel");
 
+//DASHBOARD
+router.get("/", async (req, res, next) => {
+  const users = await UserModel.find();
+  const destinations = await ActivityModel.find();
+  res.render("dashboard/dashboard.hbs", { users, destinations });
+});
 
 //WISHLIST
 router.get("/mywishlist", async (req, res, next) => {
-    const users = await userModel.find();
-    const destinations = await activityModel.find();
+    const users = await UserModel.find();
+    const destinations = await ActivityModel.find();
     res.render("dashboard/wishlist.hbs", { users, destinations });
   });
 
