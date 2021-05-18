@@ -3,6 +3,7 @@
 @import url("./reset.css");
 @import url("./welcome.css");
 @import url("./search_bar.css");
+@import url("./myprofile.css");
 
 * {
     margin: 0;

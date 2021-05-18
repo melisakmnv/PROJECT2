@@ -1,10 +1,23 @@
-<div id="nav_bar_box">
-    <header class="main_head">
-        <nav class="nav_bar">
-            <a class="link_item" href="/">Home</a>
-            <a class="link_item" href="/destinations">What's on the road</a>
-            <a class="link_item" href="/aboutus">Who are we</a>
-            <a class="link_item" href="/auth/signin">Let me join</a>
-        </nav>
-    </header>
+<div id='nav_bar_box'>
+  <header class='main_head'>
+    <nav class='nav_bar'>
+      <a class='link_item' href='/'>Home</a>
+      <a class='link_item' href='/destinations'>Destinations</a>
+      <a class='link_item' href='/aboutus'>Who are we</a>
+
+      {{#if isLoggedIn}}
+        <a class='link_item' href='/dashboard'> My Dashboard</a>
+      {{/if}}
+
+      <div>
+        {{#unless isLoggedIn}}
+          <a class='link_item' href='/auth/signin'>Signin</a>
+        {{/unless}}
+      </div>
+
+      {{#if isLoggedIn}}
+        <a class='link_item' href='/auth/logout'> Log out/a>
+      {{/if}}
+    </nav>
+  </header>
 </div>

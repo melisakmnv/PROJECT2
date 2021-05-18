@@ -16,9 +16,10 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    isAdmin : {
-        type: Boolean,
-        default: false
+    role : {
+        type: String,
+        enum: ["admin", "user"],
+        default: "user"
     },
     avatar: {
         type: String,
