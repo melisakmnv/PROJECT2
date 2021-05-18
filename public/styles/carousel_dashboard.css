@@ -1,0 +1,142 @@
+html, body, main {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #carousel_dashboard {
+    position: relative;
+    height: 400px;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+  }
+  #carousel_dashboard div {
+    position: absolute;
+    transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+    opacity: 1;
+  }
+  #carousel_dashboard div img {
+    width: 400px;
+    transition: width 1s;
+  }
+  #carousel_dashboard div.hideLeft {
+    left: 0%;
+    opacity: 0;
+    transform: translateY(50%) translateX(-50%);
+  }
+  #carousel_dashboard div.hideLeft img {
+    width: 200px;
+  }
+  #carousel_dashboard div.hideRight {
+    left: 100%;
+    opacity: 0;
+    transform: translateY(50%) translateX(-50%);
+  }
+  #carousel_dashboard div.hideRight img {
+    width: 200px;
+  }
+  #carousel_dashboard div.prev {
+    z-index: 5;
+    left: 30%;
+    transform: translateY(50px) translateX(-50%);
+  }
+  #carousel_dashboard div.prev img {
+    width: 300px;
+  }
+  #carousel_dashboard div.prevLeftSecond {
+    z-index: 4;
+    left: 15%;
+    transform: translateY(50%) translateX(-50%);
+    opacity: 0.7;
+  }
+  #carousel_dashboard div.prevLeftSecond img {
+    width: 200px;
+  }
+  #carousel_dashboard div.selected {
+    z-index: 10;
+    left: 50%;
+    transform: translateY(0px) translateX(-50%);
+  }
+  #carousel_dashboard div.next {
+    z-index: 5;
+    left: 70%;
+    transform: translateY(50px) translateX(-50%);
+  }
+  #carousel_dashboard div.next img {
+    width: 300px;
+  }
+  #carousel_dashboard div.nextRightSecond {
+    z-index: 4;
+    left: 85%;
+    transform: translateY(50%) translateX(-50%);
+    opacity: 0.7;
+  }
+  #carousel_dashboard div.nextRightSecond img {
+    width: 200px;
+  }
+  
+  /* .buttons {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+  } */
+
+  /* Javascript à ajouter */
+  /* function moveToSelected(element) {
+
+    if (element == "next") {
+      var selected = $(".selected").next();
+    } else if (element == "prev") {
+      var selected = $(".selected").prev();
+    } else {
+      var selected = element;
+    }
+  
+    var next = $(selected).next();
+    var prev = $(selected).prev();
+    var prevSecond = $(prev).prev();
+    var nextSecond = $(next).next();
+  
+    $(selected).removeClass().addClass("selected");
+  
+    $(prev).removeClass().addClass("prev");
+    $(next).removeClass().addClass("next");
+  
+    $(nextSecond).removeClass().addClass("nextRightSecond");
+    $(prevSecond).removeClass().addClass("prevLeftSecond");
+  
+    $(nextSecond).nextAll().removeClass().addClass('hideRight');
+    $(prevSecond).prevAll().removeClass().addClass('hideLeft');
+  
+  }
+  
+  // Eventos teclado
+  $(document).keydown(function(e) {
+      switch(e.which) {
+          case 37: // left
+          moveToSelected('prev');
+          break;
+  
+          case 39: // right
+          moveToSelected('next');
+          break;
+  
+          default: return;
+      }
+      e.preventDefault();
+  });
+  
+  $('#carrousel-dashboard div').click(function() {
+    moveToSelected($(this));
+  });
+  
+  $('#prev').click(function() {
+    moveToSelected('prev');
+  });
+  
+  $('#next').click(function() {
+    moveToSelected('next');
+  }); */

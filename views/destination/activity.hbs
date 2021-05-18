@@ -1,0 +1,17 @@
+<div class="main-content-activity flexed-item big-container">
+
+{{!-- ACTIVITY NAME --}}
+{{#each activity}}
+<h1 class="{{activity.name}}"></h1> {{!-- Name à rajouter en object du model--}}
+<p>{{this.address}}</p>
+<p>{{this.description}}</p>
+<p>Submitted by {{this.creator}}</p>
+
+<div class="review">
+    <h2 class="review-title">{{review.title}}</h2> {{!-- Soit un titre, soit les étoiles attribuées--}}
+{{!-- reviews attribués à l'activité - via id? --}}
+</div>
+<div class="carousel">{{!-- API Google --}}</div>
+{{/each}}
+
+</div>
