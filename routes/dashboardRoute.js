@@ -6,9 +6,8 @@ const ActivityModel = require("./../models/activityModel");
 
 //DASHBOARD
 router.get("/", async (req, res, next) => {
-  const users = await UserModel.find();
-  const destinations = await ActivityModel.find();
-  res.render("dashboard/dashboard.hbs", { users, destinations });
+  const user = await UserModel.findById(req.session.currentUser._id).populate("wishlist");
+  res.render("dashboard/dashboard.hbs", { user });
 });
 
 //WISHLIST
