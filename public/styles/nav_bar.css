@@ -2,10 +2,12 @@
     display: flex;
     background-color: teal;
     justify-content: center;
+    position: fixed;
+    height: 10vh;
+    width: 100%;
 }
 .main_head {
     width: 100%;
-    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -28,7 +28,9 @@ body {
 .section_one {
     background: url(/images/bg.jpg) fixed;
     background-size: cover;
-    height: 100vh;
+    height: 80vh;
+    top: 10vh;
+    position: relative;
 }
 
 
