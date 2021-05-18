@@ -6,13 +6,13 @@ require('dotenv').config();
 // ------------------------------//
 
 const express = require('express');
-const createError = require("http-errors");
+const createError = require('http-errors');
 const hbs = require('hbs');
 const path = require('path');
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-
+// const MongoStore = require("connect-mongo")(session);
 
 // ---------------------//
 //  STEP 2 : Base Setup //
@@ -29,16 +29,31 @@ app.use(express.urlencoded({ extended: false })); // So I past this line to be a
 app.use(express.json({ extended: false })); // This allows to test on postman and display data in terminal ==> {} data empty
 app.use(cookieParser());
 
-
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
     saveUninitialized: true,
     resave: true,
+    cookie: {
+      // sameSite: 'none',
+      httpOnly: true,
+      maxAge: 60000,
+    },
+    // store: new MongoStore({ // la session est stockée en bdd
+    //   mongooseConnection: mongoose.connection,
+    //   ttl: 24 * 60 * 60 // 1 day
+    // }),
   })
 );
 
 app.use(flash());
+
+app.use((req, res, next) => {
+  console.log(req.session, 'this is session');
+  next();
+});
+
+// ----------- MIDDLEWARES ----------- //
 app.use(require('./middlewares/exposeFlashMessage'));
 app.use(require('./middlewares/exposeLoginStatus'));
 
@@ -60,17 +75,27 @@ app.use('/dashboard', require('./routes/dashboardRoute'));
 // STEP 4 : app listen to kickstart //
 // ---------------------------------//
 
+// --------  CATCH 404 -------- //
+
+app.use(function (req, res, next) {
+  next(createError(404));
+});
+
+// --------  ERROR HANDLER -------- //
 
 app.use(function (err, req, res, next) {
   res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
   res.status(err.status || 500);
-  res.render("error");
+  res.render('error');
 });
-
 
 app.listen(3333);
 
 console.log("let's go");
 
 // Cannot connect to .env
+
+// Le changement : Je vais créer un fichier => session => config // Déplacer app.use(session) dedans
+
+module.exports = app;

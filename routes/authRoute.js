@@ -13,15 +13,18 @@ router.get('/signin', (req, res) => {
 // ======= POST - SIGNIN ======= //
 
 router.post('/signin', async (req, res) => {
+  console.log('SESSION =====> ', req.session);      
   const { email, password } = req.body;
   const foundUser = await UserModel.findOne({ email: email });
   if (!foundUser) {
-    res.redirect('/auth/signin');
+    // res.redirect('/auth/signin');  I will change to 20 
+    res.render('/auth/signin')
+    return;
 
     // ----- postman test ----- //
     // return res.status(400).json({ errors: [{ msg: 'No user' }] }); // to see on the console // Postman
 
-    // ------- FLASH MESSAGE GOES HERE ------- //
+    // ------- FLASH MESSAGE GOES HERE ------- // 
   } else {
     const isSamePassword = bcrypt.compareSync(password, foundUser.password);
     if (!isSamePassword) {
@@ -37,6 +40,10 @@ router.post('/signin', async (req, res) => {
       // ----- postman test ----- //
       //   res.send('Yayyyy');
       /// ------- FLASH MESSAGE GOES HERE ------- //
+      
+      // const userObject = foundUser.toObject();
+      // delete userObject.password;
+      req.session.currentUser = foundUser;
       res.redirect('/');
     }
   }

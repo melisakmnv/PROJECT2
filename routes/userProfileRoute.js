@@ -3,10 +3,10 @@ const router = new express.Router();
 
 const UserModel = require('./../models/userModel');
 
-//PROFILE => go to my profile
-// router.get('/myprofile', (req, res) => {
-//   res.render('dashboard/myProfile.hbs', { user: req.user });
-// });
+// PROFILE => go to my profile
+router.get('/myprofile', (req, res) => {
+  res.render('dashboard/myProfile.hbs', { user: req.user });
+});
 
 // Photo, username , email, Description/Bio, city, account
 
