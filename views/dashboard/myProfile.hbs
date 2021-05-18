@@ -1,9 +1,11 @@
 <h1> This is an example</h1>
 
 <div class="card">
-    <p>username : Melisa</p> 
-    <p>email : ChamoueLove@gmail.com</p>
-    <p>Description : Love chaaamoue</p>
-    <p>city : Paris</p>
-    <p>account</p>
+    <p> username :  {{user.username}}</p>  
+    <p>email : {{user.email}}</p>
+    <p>Description : {{user.description}}</p>
+    <p>city : {{user.city}}</p>
+    <a href="/myprofile/:id/edit">Edit</a> 
+    <a href="/myprofile/:id/delete">Delete Account</a> 
 </div>
+

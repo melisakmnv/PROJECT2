@@ -1,12 +1,28 @@
 const express = require('express');
 const router = new express.Router();
-
 const UserModel = require('./../models/userModel');
 
+// @route     GET dashboard/profile
+// @desc      Test
+// @access    Private
+
 // PROFILE => go to my profile
-router.get('/myprofile', (req, res) => {
-  res.render('dashboard/myProfile.hbs', { user: req.user });
-});
+// router.get('/myprofile/{{this.id}}', (req, res) => {
+//   res.render('dashboard/myProfile.hbs', { username : req.username });
+// });
+
+// router.get('/myprofile/:username', (req, res, next) => {
+//   UserModel.findById(req.params.username)
+//   .then((user) => {
+//     res.render('dashboard/myProfile.hbs', {user})
+//   })
+//   .catch(next);
+// })
+
+router.get("/myprofile", (req, res) => {
+  res.render('dashboard/myProfile.hbs')
+})
+
 
 // Photo, username , email, Description/Bio, city, account
 
@@ -14,6 +30,9 @@ router.get('/myprofile/:id', (req, res, next) => {
   UserModel.findById(req.params.id)
   .then((user) => {
     res.render('dashboard/myProfile.hbs', {user})
+        // return res
+      //   .status(400)
+      //   .json({ errors: [{ msg: 'username is already used' }] });
   })
   .catch(next);
 })
@@ -47,3 +66,6 @@ router.get('/myprofile/:id/delete', (req, res, next) => {
   .catch(next);
 });
 
+
+
+module.exports = router;

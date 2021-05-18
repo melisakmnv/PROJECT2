@@ -3,7 +3,6 @@
     <nav class='nav_bar'>
       <a class='link_item' href='/'>Home</a>
       <a class='link_item' href='/destinations'>Destinations</a>
-      <a class='link_item' href='/aboutus'>Who are we</a>
 
       {{#if isLoggedIn}}
         <a class='link_item' href='/dashboard'> My Dashboard</a>
@@ -11,14 +10,14 @@
 
       <div>
         {{#unless isLoggedIn}}
-          <a class='link_item' href='/auth/signin'>Signin</a>
+          <a class='link_item' href='/aboutus'>Who are we</a>
+          <a class='link_item' href='/auth/signin'> |  Signin</a>
         {{/unless}}
       </div>
 
       {{#if isLoggedIn}}
-        <a class='link_item' href='/auth/logout'> Log out/a>
+        <a class='link_item' href='/user'> |  username</a>
       {{/if}}
     </nav>
   </header>
 </div>
-

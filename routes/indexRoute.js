@@ -49,4 +49,11 @@ router.get("/map", (req, res) => {
 //     .then(() => res.render("cities_list.hbs", { activities }));
 // });
 
+
+//  CRUD USER PROFILE TEST // 
+
+// router.get("/myprofile/:id", (req, res) => {
+//   res.render('dashboard/myProfile.hbs')
+// })
+
 module.exports = router;

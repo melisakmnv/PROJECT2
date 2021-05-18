@@ -48,10 +48,10 @@ app.use(
 
 app.use(flash());
 
-app.use((req, res, next) => {
-  console.log(req.session, 'this is session');
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log(req.session, 'this is session');
+//   next();
+// });
 
 // ----------- MIDDLEWARES ----------- //
 app.use(require('./middlewares/exposeFlashMessage'));
@@ -63,6 +63,7 @@ app.use(require('./middlewares/exposeLoginStatus'));
 
 // ------ require routes ------ //
 const indexRouter = require('./routes/indexRoute');
+const profileRouter = require('./routes/userProfileRoute')
 // const authRouter = require("./routes/auth")
 
 // ------ PREFIX router ------ //
@@ -70,6 +71,7 @@ const indexRouter = require('./routes/indexRoute');
 app.use('/', indexRouter);
 app.use('/auth', require('./routes/authRoute'));
 app.use('/dashboard', require('./routes/dashboardRoute'));
+app.use('/Hello', profileRouter); // need to be modified !!!!!!!!!!
 
 // ---------------------------------//
 // STEP 4 : app listen to kickstart //
