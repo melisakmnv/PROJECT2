@@ -6,10 +6,10 @@ const tags = [
     label: "Family-friendly",
   },
   {
-    label: "Foodie",
+    label: "Food",
   },
   {
-    label: "Randonnées",
+    label: "Hiking",
   },
   {
     label: "Swim",
