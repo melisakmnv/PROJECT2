@@ -1,7 +1,6 @@
 @import url("./nav_bar.css");
 @import url("./form.css");
 @import url("./reset.css");
-@import url("./welcome.css");
 @import url("./search_bar.css");
 @import url("./myprofile.css");
 
@@ -12,5 +11,31 @@
 }
 
 body {
-    font-family: 'Patrick Hand', cursive;
+    font-family: sans-serif;
+}
+
+
+
+.section_one {
+    background: url(/images/bg.jpg) fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+.first-view h1 {
+    color:rgb(240, 235, 227);
+    font-size: 10em;
+    text-align: center;
+    text-shadow: 10px 10px 10px rgba(28,12,7,0.86);
+    -webkit-text-stroke-width: 6px;
+    -webkit-text-stroke-color: teal;
+    margin: 50px;
+}
+
+.first-view h3 {
+    color:rgb(240, 235, 227);
+    font-size: 5em;
+    text-align: center;
+    text-shadow: 10px 10px 5px rgba(28,12,7,0.86);
 }
