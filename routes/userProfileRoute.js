@@ -12,20 +12,53 @@ router.get('/', (req, res) => {
 });
 
 
-router.get('/:id', (req, res) => {
-    UserModel.findById(req.params.id)
-  .then((user) => {
-    res.render('dashboard/myProfile.hbs', {user})
+
+
+// Hello 
+
+router.get('/myprofile', (req, res, next) => {
+  UserModel.findById(req.session.currentUser._id)
+  .then((currentUser) => {
+    res.render('dashboard/myProfile.hbs', {currentUser})
   })
   .catch(next);
 })
-// router.get('/myprofile/:username', (req, res, next) => {
-//   UserModel.findById(req.params.username)
+
+
+// UPDATE
+
+router.get('/myprofile/edit', (req, res, next) => {
+  UserModel.findById(req.session.currentUser)
+  .then((currentUser) => {
+    res.render('dashboard/myProfile_edit.hbs', {currentUser})
+  })
+  .catch(next);
+})
+
+
+router.post('/myprofile/edit', (req, res, next) => {
+  UserModel.findByIdAndUpdate(req.session.currentUser)
+  .then(() => {
+    res.redirect('/Hello/myprofile')
+  })
+  .catch(next);
+})
+
+
+
+
+
+
+// router.get("/users", (req, res, next) => {
+//   UserModel.find()
 //   .then((user) => {
-//     res.render('dashboard/myProfile.hbs', {user})
+//       console.log(user),
+//       res.render("dashboard/myProfile.hbs", {user})
 //   })
-//   .catch(next);
+//   .catch((err) => next(err))
 // })
+
+
 
 // router.get("/myprofile", (req, res) => {
 //   res.render('dashboard/myProfile.hbs')
@@ -89,14 +122,6 @@ router.get('/:id', (req, res) => {
 // })  ==> display on html worked ! 
 
 
-// router.get("/users", (req, res, next) => {
-//   UserModel.find()
-//   .then((user) => {
-//       console.log(users),
-//       res.render("dashboard/myProfile.hbs", {user})
-//   })
-//   .catch((err) => next(err))
-// })
 
 
 
