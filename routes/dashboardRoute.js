@@ -18,19 +18,23 @@ router.get("/mywishlist", async (req, res, next) => {
 });
 
 // Destination ADD
-router.get("/destination_add", (req, res) => {
-  res.render("dashboard/destination_add.hbs");
+
+router.get("/destinations_add", (req, res) => {
+  res.render("dashboard/destinations_add.hbs");
 });
 
-router.post("/destination_add", (req, res, next) => {
-  ActivityModel.create(req.body)
-    .then((dbResult) => {
-      console.log(dbResult);
-      res.redirect("/dashboard");
-    })
-    .catch((err) => {
-      res.render("dashboard/destination_add.hbs");
-    });
-});
+router.post("/destinations_add", (req, res, next) => {
+  
+    ActivityModel.create(req.body)
+      .then((dbResult) => {
+        console.log(dbResult);
+        res.redirect("/dashboard");
+      })
+      .catch((err) => {
+        res.render("dashboard/destinations_add.hbs");
+      });
+  });
+
+
 
 module.exports = router;

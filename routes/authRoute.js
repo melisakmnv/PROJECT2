@@ -12,8 +12,7 @@ router.get('/signin', (req, res) => {
 
 // ======= POST - SIGNIN ======= //
 
-router.post('/signin', async (req, res) => {
-  console.log('SESSION =====> ', req.session);      
+router.post('/signin', async (req, res) => {     
   const { email, password } = req.body;
   const foundUser = await UserModel.findOne({ email: email });
   if (!foundUser) {
