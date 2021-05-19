@@ -1,17 +1,37 @@
-<div>
-  <form method='POST' action='/auth/signup'>
-    <label for='username'>Display Name : </label>
-    <input name='username' id='username' type='text'/>
+<div class='big_card'>
+  <div class='card_edit'>
+    <form method='post' action='/Hello/myprofile/edit'>
+      {{!-- <label for='avatar'>Avatar : </label>
+    <input name='avatar' id='avatar' type='text' value="{{currentUser.avatar}}"/> --}}
 
-    <label for='email'>Email : </label>
-    <input name='email' id='email' type='email'/>
+      <label for='username'>Username : </label>
+      <input
+        name='username'
+        id='username'
+        type='text'
+        value='{{currentUser.username}}'
+      />
 
-    <label for='city'>City : </label>
-    <input name='city' id='city' type='text'/>
+      <label for='email'>Email : </label>
+      <input
+        name='email'
+        id='email'
+        type='email'
+        value='{{currentUser.email}}'
+      />
 
-    <label for='description'>Description : </label>
-    <textarea name='description' id='description' type='text'/>
+      <label for='city'>City : </label>
+      <input name='city' id='city' type='text' value='{{currentUser.city}}' />
 
-    <button type='submit'>Submit</button>
-  </form>
+      <label for='description'>Description : </label>
+      <textarea
+        name='description'
+        id='description'
+        type='text'
+        value='{{currentUser.description}}'
+      ></textarea>
+
+      <button type='submit'>Submit</button>
+    </form>
+  </div>
 </div>

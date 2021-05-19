@@ -27,13 +27,14 @@
 
 <div class="card">
     <div class="user_avatar">
-        <i> edit</i>
-        <i>delete</i>
+       <img src="{{currentUser.avatar}}" alt="user avatar">
     </div>
     <div class="user_info">
-        <p>Display name : </p>
-        <p>Email : </p>
-        <p>City : </p>
-        <p>Description : </p>
+        <p>Username : {{currentUser.username}} </p>
+        <p>Email : {{currentUser.email}} </p>
+        <p>City :  {{currentUser.city}} </p>
+        <p>Description : {{currentUser.description}} </p>
     </div>
+    <a href="/Hello/myprofile/edit">Edit Profile</a>
+    <a href="">Delete account</a>
 </div>

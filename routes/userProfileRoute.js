@@ -11,13 +11,53 @@ const UserModel = require('./../models/userModel');
 //   res.render('dashboard/myProfile.hbs', { username : req.username });
 // });
 
-// router.get('/myprofile/:username', (req, res, next) => {
-//   UserModel.findById(req.params.username)
+
+
+// Hello 
+
+router.get('/myprofile', (req, res, next) => {
+  UserModel.findById(req.session.currentUser._id)
+  .then((currentUser) => {
+    res.render('dashboard/myProfile.hbs', {currentUser})
+  })
+  .catch(next);
+})
+
+
+// UPDATE
+
+router.get('/myprofile/edit', (req, res, next) => {
+  UserModel.findById(req.session.currentUser)
+  .then((currentUser) => {
+    res.render('dashboard/myProfile_edit.hbs', {currentUser})
+  })
+  .catch(next);
+})
+
+
+router.post('/myprofile/edit', (req, res, next) => {
+  UserModel.findByIdAndUpdate(req.session.currentUser)
+  .then(() => {
+    res.redirect('/Hello/myprofile')
+  })
+  .catch(next);
+})
+
+
+
+
+
+
+// router.get("/users", (req, res, next) => {
+//   UserModel.find()
 //   .then((user) => {
-//     res.render('dashboard/myProfile.hbs', {user})
+//       console.log(user),
+//       res.render("dashboard/myProfile.hbs", {user})
 //   })
-//   .catch(next);
+//   .catch((err) => next(err))
 // })
+
+
 
 // router.get("/myprofile", (req, res) => {
 //   res.render('dashboard/myProfile.hbs')
@@ -81,14 +121,6 @@ const UserModel = require('./../models/userModel');
 // })
 
 
-router.get("/users", (req, res, next) => {
-  UserModel.find()
-  .then((user) => {
-      console.log(user),
-      res.render("dashboard/myProfile.hbs", {user})
-  })
-  .catch((err) => next(err))
-})
 
 
 
