@@ -1,50 +1,24 @@
 <section id="dashboard-title">
   <h1>MY DASHBOARD</h1>
 </section>
-<section id="dashboard-carousel">
-    <div id="carousel-dashboard">
-<div class="hideLeft">
-        <img src="">
-      </div>
+<section id="dashboard-carousel-container">
+<div class="slider">
+	<div class="slide-track">
 
-      <div class="prevLeftSecond">
-        <img src="">
-      </div>
+    {{#each user.wishlist}}
 
-      <div class="prev">
-        <img src="">
-      </div>
+		<div class="slide">
+		
+    	<div class="carousel-city-name">{{this.city}}</div>
+      <img class="carousel-city-photo" src="{{this.photo_city}}" alt="Photo of {{this.city}}"/>
 
-      <div class="selected">
-        <img src="">
-      </div>
-
-      <div class="next">
-        <img src="">
-      </div>
-
-      <div class="nextRightSecond">
-        <img src="">
-      </div>
-
-      <div class="hideRight">
-        <img src="">
-      </div>
-    
-</div>
-  <div class="carousel">
-    {{#each users.wishlist}}
-      <div>
-        <div class="carousel-city-name">{{this.city}}</div>
-        <img
-          class="carousel-city-photo"
-          src="{{this.photo_city}}"
-          alt="Photo of {{this.city}}"
-        />
-        </div>
+		</div>
 
     {{/each}}
+
   </div>
+</div>
+
 </section>
 
 
@@ -65,7 +39,7 @@
     <h2>My destinations</h2>
 </a>
 
-<a href="/myprofile" class="dashboard-options">
+<a href="/dashboard/myprofile" class="dashboard-options">
     <img class="dashboard-img-4" src="/images/dashboard_myprofile-icon.png" alt="My profile icon">
     <h2>My profile</h2>
 </a>
