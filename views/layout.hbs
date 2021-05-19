@@ -13,12 +13,19 @@
 </head>
 
 <body>
-    {{> nav_bar}}
-    {{{body}}}
 
-    {{!-- <a href="/myprofile">>>>>>>TO my profile</a> --}}
+    <header>
+        {{> nav_bar}}
+    </header>
 
-    {{> footer}}
+    <main>
+        {{{body}}}
+    </main>
+
+    <footer>
+        {{> footer}}
+    </footer>
+    
 </body>
 
 </html>
