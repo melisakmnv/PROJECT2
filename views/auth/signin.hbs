@@ -1,8 +1,8 @@
 <section>
     <div class="main_container">
         <div class="container">
-            <h1>I put things here</h1>
             <div class="form_container signin_container">
+                {{> flash_message}}
                 <form method="POST" action="/auth/signin">
                     <h1>Sign in</h1>
                     <input name="email" id="email" type="email" placeholder="E-mail">

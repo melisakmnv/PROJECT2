@@ -12,37 +12,23 @@ router.get('/signin', (req, res) => {
 
 // ======= POST - SIGNIN ======= //
 
-router.post('/signin', async (req, res) => {     
+router.post('/signin', async (req, res) => {
   const { email, password } = req.body;
   const foundUser = await UserModel.findOne({ email: email });
   if (!foundUser) {
-    // res.redirect('/auth/signin');  I will change to 20 
-    res.render('/auth/signin')
+    req.flash("error", "Email incorrect");
+    res.redirect('/auth/signin');
     return;
-
-    // ----- postman test ----- //
-    // return res.status(400).json({ errors: [{ msg: 'No user' }] }); // to see on the console // Postman
-
-    // ------- FLASH MESSAGE GOES HERE ------- // 
   } else {
     const isSamePassword = bcrypt.compareSync(password, foundUser.password);
     if (!isSamePassword) {
+      req.flash("error", "Password incorrect");
       res.redirect('/auth/signin');
-
-      // ----- postman test ----- //
-      //   return res
-      //     .status(400)
-      //     .json({ errors: [{ msg: 'Password is not correct' }] });
-
-      // ------- FLASH MESSAGE GOES HERE ------- //
     } else {
-      // ----- postman test ----- //
-      //   res.send('Yayyyy');
-      /// ------- FLASH MESSAGE GOES HERE ------- //
-      
-      // const userObject = foundUser.toObject();
-      // delete userObject.password;
-      req.session.currentUser = foundUser;
+      const userObject = foundUser.toObject();
+      delete userObject.password;
+      req.session.currentUser = userObject;
+      // req.flash("success", "Successfully logged in...");
       res.redirect('/dashboard');
     }
   }
@@ -65,45 +51,30 @@ router.post('/signup', async (req, res, next) => {
     });
 
     if (foundUser) {
+      req.flash("warning", "This email is already used");
       res.redirect('/auth/signup');
-
-      // ----- postman test ----- //
-      // return res.status(400).json({ errors: [{ msg: 'This Email is already used' }] });
-
-      // ------- FLASH MESSAGE GOES HERE ------- //
     } else if (foundUsername) {
+      req.flash("warning", "This username is already used");
       res.redirect('/auth/signup');
-      // ----- postman test ----- //
-      // return res
-      //   .status(400)
-      //   .json({ errors: [{ msg: 'username is already used' }] });
-
-      // ------- FLASH MESSAGE GOES HERE ------- //
     } else {
       const hashedPassword = bcrypt.hashSync(newUser.password, 10);
       newUser.password = hashedPassword;
       await UserModel.create(newUser);
+      req.flash("success", "Congratulations ! You are now registered ");
       res.redirect('/auth/signin');
-
-      // ----- postman test ----- //
-      // res.send('You are registered !');
-
-      // ------- FLASH MESSAGE GOES HERE ------- //
     }
   } catch (err) {
     console.error(err);
-    return res.status(400).json({ errors: [{ msg: 'problem' }] });
-
-    // ------- FLASH MESSAGE GOES HERE ------- //
+    res.redirect("/auth/signup");
   }
 });
-
 
 // SIGNOUT //
 
 router.post('/signout', (req, res) => {
   req.session.destroy();
+  req.flash("success", "You have just logged out ! ");
   res.redirect('/');
-})
+});
 
 module.exports = router;

@@ -2,6 +2,7 @@
     <div class="main_container">
         <div class="container">
             <div class="form_container signup_container">
+                {{> flash_message}}
                 <form method="POST" action="/auth/signup">
                     <h1>Create an account</h1>
                     <input name="username" id="username" type="text" placeholder="Username">
