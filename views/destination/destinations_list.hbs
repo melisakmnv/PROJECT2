@@ -1,0 +1,20 @@
+<div class="big-container manage-destinations-wrapper">
+  <div class="page-title">
+    <h3 class="manage-destinations-title">Your destinations added</h3>
+    <button type="button" class="add-btn" onclick="./myDestinations_add.hbs">Add
+      a new destination</button>
+  </div>
+  <div class="conteneur-destinations">
+    {{#each activities}}
+      <div class="activity-img">
+        <img
+          src="{{this.photo_category[0]}}"
+          alt="{{this.name}}"
+        />
+      </div>
+      <p class="activity-name">{{this.name}}</p>
+      <p class="activity-cat">{{this.category}}</p>
+    {{/each}}
+
+  </div>
+</div>

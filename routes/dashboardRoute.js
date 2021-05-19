@@ -17,17 +17,23 @@ router.get("/mywishlist", async (req, res, next) => {
     res.render("dashboard/wishlist.hbs", { users, destinations });
   });
 
+// Destination ADD
 
+router.get("/destination_add", (req, res) => {
+  res.render("dashboard/destination_add.hbs");
+});
 
-
-
-
-
-
-//MY DESTINATIONS (CRUD)
-// router.get("/mydestinations", (req, res) => {
-//   res.render("myProfile.hbs", { user: req.user });
-// });
+router.post("/destination_add", (req, res, next) => {
+  
+    ActivityModel.create(req.body)
+      .then((dbResult) => {
+        console.log(dbResult);
+        res.redirect("/dashboard");
+      })
+      .catch((err) => {
+        res.render("dashboard/destination_add.hbs");
+      });
+  });
 
 
 

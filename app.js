@@ -72,6 +72,7 @@ app.use('/', indexRouter);
 app.use('/auth', require('./routes/authRoute'));
 app.use('/dashboard', require('./routes/dashboardRoute'));
 app.use('/Hello', profileRouter); // need to be modified !!!!!!!!!!
+app.use('/destinations', require('./routes/destinationRoute'));
 
 // ---------------------------------//
 // STEP 4 : app listen to kickstart //
