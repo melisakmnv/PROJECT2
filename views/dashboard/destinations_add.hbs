@@ -1,8 +1,10 @@
+<div class="body-destination-manage">
 <div class="big-container destination-manage-wrapper flexed-item">
   <form action="/dashboard/destinations_add" method="post" class="add-destination-form" 
   {{!-- enctype="multiparty/form-data" --}}
   >
-<h3 class="form-title">Add a destination</h3>
+<div class="form-add-edit-blocks">
+<h3 class="form-add-destination-title">Add a destination</h3>
   <div class="form-item-wrapper flexed-item">
     <label for="category" class="label-main-cat label">Category</label>
     <select id="category" class="select" name="category" required>
@@ -12,8 +14,9 @@
         <option value="culture">Culture</option>
     </select>
   </div>
-<p>Accessibility:</p>
-<div>
+  </div>
+<p><b>Accessibility:</b></p>
+<div class="form-add-edit-blocks">
   <input type="checkbox" id="plane" name="plane">
   <label for="plane">Plane</label>
   <input type="checkbox" id="train" name="train">
@@ -29,8 +32,9 @@
       <label for="destination-img" class="label-price label">Image</label>
       <input id="destination-img" type="file" class="sneaker-price input">
  </div>
+ <div class="form-add-edit-blocks">
  <p>Destination characteristics:</p>
-<div>
+
   <input type="checkbox" id="family-friendly" name="family-friendly">
   <label for="family-friendly">Family-friendly</label>
   <input type="checkbox" id="food" name="food">
@@ -48,8 +52,10 @@
   <input type="checkbox" id="children-friendly" name="children-friendly">
   <label for="children-friendly">Children-friendly</label>
 </div>
+<div class="form-add-edit-blocks">
  <label for="name">Description:</label>
   <textarea type="text" id="description" name="description" required></textarea>
 </div><br>
     <button class="button-primary submit-btn">Submit</button>
   </form>
+  </div>
