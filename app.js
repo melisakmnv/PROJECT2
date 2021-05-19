@@ -28,7 +28,7 @@ hbs.registerPartials(path.join(__dirname, 'views/auth/partials'));
 app.use(express.urlencoded({ extended: false })); // So I past this line to be able to read data [object: null prototype {....}]
 app.use(express.json({ extended: false })); // This allows to test on postman and display data in terminal ==> {} data empty
 app.use(cookieParser());
-
+console.log("j'aime les frites")
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
