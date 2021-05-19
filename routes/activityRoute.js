@@ -5,63 +5,35 @@ const ActivityModel = require("../models/activityModel");
 // const TagModel = require("../models/tagModel");
 // const UserModel = require("../models/userModel");
 
-router.get("/", (req, res, next) => {
-  ActivityModel.find()
-  .then((destinations) => {
-    res.render("destination/destinations_list.hbs", { destinations });
-  })
-  .catch(next);
-});
-
-// Go to city page
 
   router.get("/:id", (req, res, next) => {
     ActivityModel.findById(req.params.id)
-    .then((city) => {
-      // console.log(activity);
-      res.render("destination/city.hbs", { city });
+    .then((activity) => {
+      res.render("destination/activity.hbs", { activity });
     })
     .catch(next);
   });
 
 
-// Update City
+// Update
 
 router.get("/:id/edit", (req, res, next) => {
   ActivityModel.findById(req.params.id)
-    .then((city) => {
-      res.render("destination/destination_edit.hbs", { city });
+    .then((activity) => {
+      res.render("destination/activity_edit.hbs", { activity });
     })
     .catch(next);
 });
 
 router.post("/:id/edit", (req, res, next) => {
   ActivityModel.findByIdAndUpdate(req.params.id, req.body)
-    .then((city) => {
-      res.redirect("/destinations/:id");
+    .then((activity) => {
+      res.redirect("/activity/:id");
     })
     .catch(next);
 });
 
-// ADD Activity
-
-router.get("/activity_add", (req, res) => {
-  res.render("destination/activity_add.hbs");
-});
-
-router.post("/activity_add", (req, res, next) => {
-  
-    ActivityModel.create(req.body)
-      .then((dbResult) => {
-        console.log(dbResult);
-        res.redirect("/destinations/:id");
-      })
-      .catch((err) => {
-        res.render("destination/activity_add.hbs");
-      });
-  });
-
-// Delete
+// Delete (pour les admins)
 
 // router.get("/delete/:id", async (req, res, next) => {
 //   try {
