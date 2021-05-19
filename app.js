@@ -12,7 +12,7 @@ const path = require('path');
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-// const MongoStore = require("connect-mongo")(session);
+const MongoStore = require("connect-mongo")
 
 // ---------------------//
 //  STEP 2 : Base Setup //
@@ -39,19 +39,13 @@ app.use(
       // httpOnly: true,
       maxAge: 600000,
     },
-    // store: new MongoStore({ // la session est stockée en bdd
-    //   mongooseConnection: mongoose.connection,
-    //   ttl: 24 * 60 * 60 // 1 day
-    // }),
+    store: MongoStore.create({ 
+      mongoUrl: process.env.MONGO_URI,
+    }),
   })
 );
 
 app.use(flash());
-
-// app.use((req, res, next) => {
-//   console.log(req.session, 'this is session');
-//   next();
-// });
 
 // ----------- MIDDLEWARES ----------- //
 app.use(require('./middlewares/exposeFlashMessage'));
