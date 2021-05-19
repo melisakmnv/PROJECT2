@@ -7,10 +7,18 @@ const UserModel = require('./../models/userModel');
 // @access    Private
 
 // PROFILE => go to my profile
-// router.get('/myprofile/{{this.id}}', (req, res) => {
-//   res.render('dashboard/myProfile.hbs', { username : req.username });
-// });
+router.get('/', (req, res) => {
+  res.render('dashboard/myProfile.hbs', { username : req.username });
+});
 
+
+router.get('/:id', (req, res) => {
+    UserModel.findById(req.params.id)
+  .then((user) => {
+    res.render('dashboard/myProfile.hbs', {user})
+  })
+  .catch(next);
+})
 // router.get('/myprofile/:username', (req, res, next) => {
 //   UserModel.findById(req.params.username)
 //   .then((user) => {
@@ -78,17 +86,17 @@ const UserModel = require('./../models/userModel');
 //     console.log(user)
 //   })
 //   .catch((err) => next(err))
+// })  ==> display on html worked ! 
+
+
+// router.get("/users", (req, res, next) => {
+//   UserModel.find()
+//   .then((user) => {
+//       console.log(users),
+//       res.render("dashboard/myProfile.hbs", {user})
+//   })
+//   .catch((err) => next(err))
 // })
-
-
-router.get("/users", (req, res, next) => {
-  UserModel.find()
-  .then((user) => {
-      console.log(user),
-      res.render("dashboard/myProfile.hbs", {user})
-  })
-  .catch((err) => next(err))
-})
 
 
 

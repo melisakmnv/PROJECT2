@@ -12,7 +12,8 @@ const path = require('path');
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-// const MongoStore = require("connect-mongo")(session);
+// const MongoStore = require('connect-mongo')(session);
+// const MongoStore = require('connect-mongo')(session);
 
 // ---------------------//
 //  STEP 2 : Base Setup //
@@ -34,6 +35,7 @@ app.use(
     secret: process.env.SESSION_SECRET,
     saveUninitialized: true,
     resave: true,
+    // store: new MongoStore ({mongooseConnection: mongoose.connection}),
     cookie: {
       // sameSite: 'none',
       // httpOnly: true,
@@ -63,7 +65,7 @@ app.use(require('./middlewares/exposeLoginStatus'));
 
 // ------ require routes ------ //
 const indexRouter = require('./routes/indexRoute');
-const profileRouter = require('./routes/userProfileRoute')
+const profileRouter = require('./routes/userProfileRoute');
 // const authRouter = require("./routes/auth")
 
 // ------ PREFIX router ------ //
@@ -71,7 +73,7 @@ const profileRouter = require('./routes/userProfileRoute')
 app.use('/', indexRouter);
 app.use('/auth', require('./routes/authRoute'));
 app.use('/dashboard', require('./routes/dashboardRoute'));
-app.use('/Hello', profileRouter); // need to be modified !!!!!!!!!!
+app.use('/dashboard/myprofile', profileRouter); //
 
 // ---------------------------------//
 // STEP 4 : app listen to kickstart //
