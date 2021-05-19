@@ -30,7 +30,7 @@ router.get("/", (req, res, next) => {
 router.get("/:id/edit", (req, res, next) => {
   ActivityModel.findById(req.params.id)
     .then((city) => {
-      res.render("destination/destination_edit.hbs", { city });
+      res.render("destination/destinations_edit.hbs", { city });
     })
     .catch(next);
 });

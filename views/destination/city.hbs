@@ -7,14 +7,13 @@
 {{!-- CATEGORIES --}}
 
 <aside class="tag-wrapper">
-    {{!-- <h4 class="tag-title">All Tags</h4> --}}
+  {{#each category}}
+    <h4 class="tag-title">All Tags</h4>
     <ul id="tag_list" class="tag-list" data-category="{{activity.category}}">
-      {{#each category}}
       <li class="category-list-item">
           {{> carousel_city}}
-        {{!-- <input id="input_{{this._id}}" type="checkbox" data-tag-id="{{this._id}}" class="checkbox" />
-        <label for="input_{{this._id}}">{{this.name}}</label> --}}
       </li>
-      {{/each}}
     </ul>
-  </aside>
+  {{/each}}
+    
+</aside>
