@@ -5,7 +5,7 @@ const UserModel = require('./../models/userModel');
 
 // Hello 
 
-router.get('/user', (req, res, next) => {
+router.get('/', (req, res, next) => {
   UserModel.findById(req.session.currentUser)
   .then((currentUser) => {
     res.render('dashboard/myProfile.hbs', {currentUser})
@@ -16,7 +16,7 @@ router.get('/user', (req, res, next) => {
 
 // UPDATE
 
-router.get('/user/edit', (req, res, next) => {
+router.get('/edit', (req, res, next) => {
   UserModel.findById(req.session.currentUser)
   .then((currentUser) => {
     res.render('dashboard/myProfile_edit.hbs', {currentUser})
@@ -25,20 +25,21 @@ router.get('/user/edit', (req, res, next) => {
 })
 
 
-router.post('/user/edit', (req, res, next) => {
-  UserModel.findByIdAndUpdate(req.session.currentUser)
-  .then(() => {
-    res.redirect('/dashboard/myprofile/user')
+router.post('/edit', (req, res, next) => {
+  UserModel.findByIdAndUpdate(req.session.currentUser, req.body)
+  .then((currentUser) => {
+    res.redirect('/dashboard/myprofile')
   })
   .catch(next);
 })
 
 // DELETE
 
-router.get('/user/delete', (req, res, next) => {
+router.get('/delete', (req, res, next) => {
   UserModel.findByIdAndDelete(req.session.currentUser)
   .then(() => {
-    res.redirect('/')
+    req.session.destroy();
+    res.redirect('/')  // => when we have deployed the site  => redirect to Home page
   })
   .catch(next);
 });

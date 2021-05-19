@@ -43,7 +43,7 @@ router.post('/signin', async (req, res) => {
       // const userObject = foundUser.toObject();
       // delete userObject.password;
       req.session.currentUser = foundUser;
-      res.redirect('/');
+      res.redirect('/dashboard');
     }
   }
 });
@@ -97,4 +97,13 @@ router.post('/signup', async (req, res, next) => {
     // ------- FLASH MESSAGE GOES HERE ------- //
   }
 });
+
+
+// SIGNOUT //
+
+router.post('/signout', (req, res) => {
+  req.session.destroy();
+  res.redirect('/');
+})
+
 module.exports = router;

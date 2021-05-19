@@ -29,7 +29,6 @@ const userSchema = new Schema(
     },
     description: {
       type: String,
-      default: "",
     },
     city: {
       type: String,

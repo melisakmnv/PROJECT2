@@ -1,36 +1,29 @@
-<div class='big_card'>
-  <div class='card_edit'>
-    <form method='post' action='/dashboard/myprofile/user/edit'>
-      {{!-- <label for='avatar'>Avatar : </label>
-    <input name='avatar' id='avatar' type='text' value="{{currentUser.avatar}}"/> --}}
+<div class='profile_main_box'>
+  <div class='profile_box'>
+    <form method='post' action='/dashboard/myprofile/edit'>
+      <div>
+        <label for='avatar'>Avatar : </label>
+        {{!-- <input
+          name='avatar'
+          id='avatar'
+          type='file'
+          value='{{currentUser.avatar}}'/> --}}
+      </div>
 
-      <label for='username'>Username : </label>
-      <input
-        name='username'
-        id='username'
-        type='text'
-        value='{{currentUser.username}}'
-      />
+      <div class='user_info'>
+        <label for='username'>Username : </label>
+        <input name='username' id='username' type='text' value='{{currentUser.username}}'/>
 
-      <label for='email'>Email : </label>
-      <input
-        name='email'
-        id='email'
-        type='email'
-        value='{{currentUser.email}}'
-      />
+        <label for='email'>Email : </label>
+        <input name='email' id='email' type='email' value='{{currentUser.email}}'/>
 
-      <label for='city'>City : </label>
-      <input name='city' id='city' type='text' value='{{currentUser.city}}' />
+        <label for='city'>City : </label>
+        <input name='city' id='city' type='text' value='{{currentUser.city}}' />
 
-      <label for='description'>Description : </label>
-      <textarea
-        name='description'
-        id='description'
-        type='text'
-        value='{{currentUser.description}}'
-      ></textarea>
-
+        <label for='description'>Description : </label>
+        <textarea name='description' id='description' type='text'
+          value='{{currentUser.description}}'></textarea>
+      </div>
       <button type='submit'>Submit</button>
     </form>
   </div>

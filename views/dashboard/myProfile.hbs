@@ -1,16 +1,17 @@
-<h1> This is an example</h1>
-
-
-<div class="card">
-    <div class="user_avatar">
-       <img src="{{currentUser.avatar}}" alt="user avatar">
+<div class='profile_main_box'>
+  <div class='profile_box'>
+    <div class='user_avatar'>
+      <img src='{{currentUser.avatar}}' alt='user avatar' />
     </div>
-    <div class="user_info">
-        <p>Username : {{currentUser.username}} </p>
-        <p>Email : {{currentUser.email}} </p>
-        <p>City :  {{currentUser.city}} </p>
-        <p>Description : {{currentUser.description}} </p>
+    <div class='user_info'>
+      <p><span>Username :</span> {{currentUser.username}} </p>
+      <p><span>Email :</span> {{currentUser.email}} </p>
+      <p><span>City :</span> {{currentUser.city}} </p>
+      <p><span>Description :</span> {{currentUser.description}} </p>
     </div>
-    <a href="/dashboard/myprofile/user/edit">Edit Profile</a>
-    <a href="">Delete account</a>
+    <div class='profil_options'>
+      <a href='/dashboard/myprofile/edit'>Edit Profile</a>
+      <a href='/dashboard/myprofile/delete'>Delete account</a>
+    </div>
+  </div>
 </div>

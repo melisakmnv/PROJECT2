@@ -18,7 +18,10 @@
       </div>
 
       {{#if isLoggedIn}}
-        <a class='link_item' href='/dashboard/myprofile'> |  username</a>
+        <a class='link_item' href='/dashboard/myprofile'> |  {{currentUser.username}}</a>
+        <form method="POST" action="/auth/signout">
+         <button>| signout</button>
+        </form>
       {{/if}}
     </nav>
   </header>
