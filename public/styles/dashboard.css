@@ -1,0 +1,25 @@
+#dashboard-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+#dashboard-img-1 {
+    width: 60%;
+}
+
+#dashboard-img-2 {
+    width: 20%;
+    margin: 5%;
+}
+
+#dashboard-img-3 {
+    width: 11.5%;
+    margin: 2%;
+}
+
+#dashboard-img-4 {
+    width: 13%;
+    margin: 0.9%;
+}

@@ -1,3 +1,10 @@
+.card-box {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card {
     width: 20vw;
     color: black;

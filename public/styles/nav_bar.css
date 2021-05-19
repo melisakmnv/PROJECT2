@@ -2,17 +2,22 @@
     display: flex;
     background-color: teal;
     justify-content: center;
+    position: fixed;
+    height: 70px;
+    width: 100%;
 }
 .main_head {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav_bar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 20px;
+    font-size: 2em;
 }
 
 .link_item {
@@ -22,4 +27,9 @@
 
 .link_item:active {
     transform: scale(0.95);
+}
+
+#logo-nav {
+    width: 80px;
+    margin: 10px;
 }

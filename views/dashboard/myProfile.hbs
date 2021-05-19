@@ -1,11 +1,39 @@
 <h1> This is an example</h1>
+{{!--
+{{!-- <div class="card-box">
+    <div class='card'>
+        <p> username : {{user.username}} </p>
+        <p>email : {{user.email}}</p>
+        <p>Description : {{user.description}} </p>
+        <p>city : {{user.city}} </p>
+        {{!-- <a href='/myprofile/:id/edit'>Edit</a>
+        <a href='/myprofile/:id/delete'>Delete Account</a> --}}
+    </div>
+</div> --}} --}}
+
+
+{{!-- <h3>List of all Users</h3>
+<hr>
+
+<div>
+    {{#each user}}
+    <div>
+        <h4>Username: {{this.username}}</h4>
+    </div>
+    <hr>
+    {{/each}}
+</div> --}}
+
 
 <div class="card">
-    <p> username :  {{user.username}}</p>  
-    <p>email : {{user.email}}</p>
-    <p>Description : {{user.description}}</p>
-    <p>city : {{user.city}}</p>
-    <a href="/myprofile/:id/edit">Edit</a> 
-    <a href="/myprofile/:id/delete">Delete Account</a> 
+    <div class="user_avatar">
+        <i> edit</i>
+        <i>delete</i>
+    </div>
+    <div class="user_info">
+        <p>Display name : </p>
+        <p>Email : </p>
+        <p>City : </p>
+        <p>Description : </p>
+    </div>
 </div>
-

@@ -1,9 +1,36 @@
-<section id="my-dashboard">
-    <h1>MY DASHBOARD</h1>
+<section id="dashboard-title">
+  <h1>MY DASHBOARD</h1>
 </section>
-<section>
-    <div class="carousel">
-{{#each users.}}
-    </div>
-</section>
+<section id="dashboard-carousel">
+  <div class="carousel">
+    {{#each users.wishlist}}
+      <div>
+        <div class="carousel-city-name">{{this.city}}</div>
+        <img
+          class="carousel-city-photo"
+          src="{{this.photo_city}}"
+          alt="Photo of {{this.city}}"
+        />
+        </div>
 
+    {{/each}}
+  </div>
+</section>
+<section id="dashboard-menu">
+<a href="/">
+    <img id="dashboard-img-1" src="/images/dashboard_map-icon.png" alt="Map icon">
+    <h2>Access map</h2>
+</a>
+<div>
+    <img id="dashboard-img-2" src="/images/dashboard_add-destination-icon.png" alt="Add destination icon">
+    <h2></h2>
+</div>
+<div>
+    <img id="dashboard-img-3" src="/images/dashboard_mydestinations-icon.png" alt="My destinations icon">
+    <h2>Access map</h2>
+</div>
+<div>
+    <img id="dashboard-img-4" src="/images/dashboard_myprofile-icon.png" alt="My profile icon">
+    <h2>Access map</h2>
+</div>
+</section>
