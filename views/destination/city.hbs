@@ -1,18 +1,20 @@
 <div class="main-content-city flexed-item big-container"></div>
-<h1>Hello!</h1>
-{{!-- CITY NAME --}}
-{{!-- insert name with Google place + bouton wishlist --}}
-<button class="button-primary submit-btn"><i class="far fa-heart"></i></button>
+<h1>{{city.city_name}}</h1>
 
-{{!-- activity._id => push currentUser.wishlisht --}}
+<img src="{{city.city_photo" alt="Photo of {{city.city_name}}">
 
-{{!-- CATEGORIES --}}
+<p>{{city.description}}</p>
 
+<p>Accessible by :
+  <ul>
+    <li></li>
+  </ul>
+</p>
 
   <form method="POST" action="/destinations/wishlist">
   <label for="_id"></label>
   <input hidden id="_id" name="_id" type="text" value="{{city._id}}">
-  <button class="productButton">Add to Favourites</button>
+  <button class="productButton">Add to Favourites <i class="far fa-heart"></i></button>
 </form>
 
   {{#each category}}

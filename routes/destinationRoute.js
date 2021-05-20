@@ -81,18 +81,16 @@ router.post('/activity_add', (req, res, next) => {
 
 router.post('/wishlist', async (req, res, next) => {
 
-  !req.session.currentUser.wishlist.includes(req.body_id) &&
+  !req.session.currentUser.wishlist.includes(req.body._id) &&
     req.session.currentUser.wishlist.push(req.body._id);
 
   const dbUser = await UserModel.findById(req.session.currentUser._id);
-  !dbUser.wishlist.includes(req.body_id) &&
+  !dbUser.wishlist.includes(req.body._id) &&
     await UserModel.findByIdAndUpdate(req.session.currentUser._id, {
       $push: { wishlist: req.body._id },
     });
   res.redirect(`/destinations/${req.body._id}`);
 
-  // .then()
-  // .catch()
 });
 
 module.exports = router;
