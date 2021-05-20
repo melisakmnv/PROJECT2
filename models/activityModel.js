@@ -2,17 +2,18 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const activitySchema = new Schema({
-
-category: { type: String, enum: ["Restaurant", "Nature", "Culture", "City", "Village"]},
-accessibility: { type: String, enum: ["Plane", "Train", "Bus", "Bicycle", "Walk"]},
-itinerary: String,
-city_name: {type : String, required : true},
-city_photo: [String],
-category_photo: [String],
-id_tags: [{ type: Schema.Types.ObjectId, ref: "tag", required: true }],
-description: {type : String, required : true},
-creator: { type: Schema.Types.ObjectId, ref: "user" },
-
+  category: {
+    type: String,
+    enum: ["Restaurant", "Nature", "Culture", "City", "Village"],
+  },
+  accessibility: [String],
+  itinerary: String,
+  city_name: { type: String, required: true },
+  city_photo: [String],
+  category_photo: [String],
+  id_tags: [{ type: Schema.Types.ObjectId, ref: "tag", required: true }],
+  description: { type: String, required: true },
+  creator: { type: Schema.Types.ObjectId, ref: "user" },
 });
 
 const ActivityModel = mongoose.model("activity", activitySchema);
