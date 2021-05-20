@@ -8,9 +8,10 @@ const ActivityModel = require("../models/activityModel");
 router.get("/", (req, res, next) => {
   ActivityModel.find()
   .then((destinations) => {
+    console.log(destinations);
     res.render("destination/destinations_list.hbs", { destinations });
   })
-  .catch(next);
+  .catch(err => next(err));
 });
 
 // Go to city page
@@ -50,13 +51,15 @@ router.get("/activity_add", (req, res) => {
 });
 
 router.post("/activity_add", (req, res, next) => {
-  
-    ActivityModel.create(req.body)
+  const activity = {...req.body}
+  console.log(req.body)
+    ActivityModel.create(activity)
       .then((dbResult) => {
         console.log(dbResult);
-        res.redirect("/destinations/:id");
+        res.redirect(`/destinations/${dbResult._id}`);
       })
       .catch((err) => {
+        console.log(err)
         res.render("destination/activity_add.hbs");
       });
   });
