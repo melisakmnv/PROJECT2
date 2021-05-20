@@ -49,7 +49,7 @@ main {
 
 /* SECTION 1 (with background image) */
 #index-section-one {
-  background: url(/images/bg.jpg) fixed;
+  background: url(/images/index-background.jpg) fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,6 @@ main {
   color: rgb(240, 235, 227);
   height: 90vh;
   width: 100%;
-  opacity: 0.6;
 }
 
 /* title : "NEOTRIP" */
@@ -70,6 +69,7 @@ main {
   margin-bottom: 50px;
   font-weight: 900;
   font-family: 'Merriweather Sans', sans-serif;
+  opacity: 1;
 }
 
 /* Subtitle : "Can't drive yet ?"*/

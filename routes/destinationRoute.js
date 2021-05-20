@@ -3,6 +3,8 @@ const router = new express.Router();
 const UserModel = require('../models/userModel');
 const ActivityModel = require('../models/activityModel');
 const TagModel = require('../models/tagModel');
+const uploader = require("./../config/cloudinary");
+
 // const UserModel = require("../models/userModel");
 
 // router.get("/", (req, res, next) => {
@@ -25,8 +27,8 @@ router.get('/:id', (req, res, next) => {
         return  activity.category === "Restaurant"
       });
 
-      // console.log("RESTAURANT");
-      // console.log(restaurant);
+      console.log("RESTAURANT");
+      console.log(restaurant);
 
       const culture = activities.filter((activity) => {
         return  activity.category === "Culture"
@@ -74,24 +76,40 @@ router.post('/:id/edit', (req, res, next) => {
 
 // ADD Activity
 
-router.get('/activity_add', (req, res) => {
+router.get('/activity_add', (req, res, next) => {
   TagModel.find().then((tags) =>
     res.render('destination/destinations_add.hbs', { tags })
-  );
+  )
+  .catch(next);
 });
 
-router.post('/activity_add', (req, res, next) => {
+router.post('/activity_add', uploader.single("photo"), (req, res, next) => {
   const activity = { ...req.body };
+  console.log("REQ BODY");
   console.log(req.body);
+
+if(activity.category === "City") {
+
+  activity.city_photo = req.file.path
+
+  console.log("CITY_PHOTO");
+  console.log(city_photo);
+
+} else {
+
+  activity.activity_photo = req.file.path;
+
+  console.log("ACTIVITY_PHOTO");
+  console.log(activity_photo);
+}
+
   ActivityModel.create(activity)
     .then((dbResult) => {
+      console.log("WEIRDO")
       console.log(dbResult);
       res.redirect('/destinations');
     })
-    .catch((err) => {
-      console.log(err);
-      res.render('destination/destinations_add.hbs');
-    });
+    .catch(next);
 });
 
 // Delete

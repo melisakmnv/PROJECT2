@@ -1,5 +1,6 @@
 const express = require("express");
 const router = new express.Router();
+const uploader = require("./../config/cloudinary");
 
 const ActivityModel = require("../models/activityModel");
 // const TagModel = require("../models/tagModel");

@@ -2,6 +2,7 @@ const { signedCookie } = require("cookie-parser");
 const express = require("express");
 const router = express.Router();
 const UserModel = require("./../models/userModel");
+const uploader = require("./../config/cloudinary");
 
 // Hello
 
