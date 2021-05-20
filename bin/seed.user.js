@@ -10,6 +10,7 @@ const users = [
     avatar: 'https://cdn.pixabay.com/photo/2020/02/20/12/12/cat-4864605__340.jpg',
     description: 'Team admin',
     city: 'Paris',
+    wishlist: ["60a6386ecce3a8d30c5629b0"]
   },
   {
     username: 'alice',
@@ -19,6 +20,7 @@ const users = [
     avatar: 'https://i.pinimg.com/originals/62/cf/de/62cfdef6cb05772d1c4c5e3882839238.png',
     description: 'Team admin',
     city: 'Paris',
+    wishlist: ["60a6386ecce3a8d30c5629b2"]
   },
 ];
 

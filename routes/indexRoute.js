@@ -22,6 +22,32 @@ router.get("/destinations", (req, res) => {
     
 });
 
+// NONE USER //
+
+// router.get("/", async (req, res, next) => {
+//   try {
+//     const lastArtists = await ArtistModel.find()
+//       .sort({ createdAt: -1 })
+//       .limit(3);
+
+//     const lastAlbums = await AlbumModel.find().sort({ createdAt: -1 }).limit(3);
+
+//     res.render("index", {
+//       lastArtists,
+//       lastAlbums,
+//     });
+//   } catch (err) {
+//     next(err);
+//   }
+// });
+
+
+
+
+
+
+
+
 
 //WHO ARE WE
 router.get("/whoarewe", (req, res) => {

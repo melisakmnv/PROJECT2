@@ -11,7 +11,7 @@ const activitySchema = new Schema({
   city_name: { type: String, required: true },
   city_photo: [String],
   category_photo: [String],
-  id_tags: [{ type: Schema.Types.ObjectId, ref: "tag", required: true }],
+  id_tags: { type: Schema.Types.ObjectId, ref: "tag", required: true },
   description: { type: String, required: true },
   creator: { type: Schema.Types.ObjectId, ref: "user" },
 });
