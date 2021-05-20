@@ -26,6 +26,9 @@ const tags = [
   {
     label: "Children-friendly",
   },
+  {
+    label: "Romantic",
+  }
 ];
 
 async function insertTags() {

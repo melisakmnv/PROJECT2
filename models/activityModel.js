@@ -3,15 +3,15 @@ const Schema = mongoose.Schema;
 
 const activitySchema = new Schema({
 
-category: { type: String, enum: ["Restaurant", "Nature", "Culture"], required: true },
-accessibility: { type: String, enum: ["Plane", "Train", "Bus", "Bicycle", "Walk"], required: true},
+category: { type: String, enum: ["Restaurant", "Nature", "Culture", "City", "Village"]},
+accessibility: { type: String, enum: ["Plane", "Train", "Bus", "Bicycle", "Walk"]},
 itinerary: String,
-city: {type : String, required : true},
-photo_city: [String],
-photo_category: [String],
+city_name: {type : String, required : true},
+city_photo: [String],
+category_photo: [String],
 id_tags: [{ type: Schema.Types.ObjectId, ref: "tag", required: true }],
 description: {type : String, required : true},
-creator: [{ type: Schema.Types.ObjectId, ref: "user" }],
+creator: { type: Schema.Types.ObjectId, ref: "user" },
 
 });
 
