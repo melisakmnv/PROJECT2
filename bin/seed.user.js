@@ -19,7 +19,6 @@ const users = [
     avatar: 'https://i.pinimg.com/originals/62/cf/de/62cfdef6cb05772d1c4c5e3882839238.png',
     description: 'Team admin',
     city: 'Paris',
-    wishlist: '',
   },
 ];
 
