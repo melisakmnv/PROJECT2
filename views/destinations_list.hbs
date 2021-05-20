@@ -5,23 +5,26 @@
 
 
 {{#unless isLoggedIn}}
-<div class="conteneur-destinations">
-
-  <div class="activity-img">
-    <img
-      src="https://lp-cms-production.imgix.net/image_browser/Effiel%20Tower%20-%20Paris%20Highlights.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850"
-      alt="Paris"/>
-  </div>
-  <p class="activity-name">Paris</p>
-</div>
-
-<div class="conteneur-destinations">
-
-  <div class="activity-img">
-    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/f7/4d/lyon.jpg?w=1600&h=1100&s=1"
-      alt="Lyon"/>
-  </div>
-  <p class="activity-name">Lyon</p>
+<div class="destinations-container">
+    <div class="grid-container">
+        <div class="photo-and-cityname">
+            <h4 class="cityname">Paris</h4>
+            <img class="city-thumbnail" src="https://lp-cms-production.imgix.net/image_browser/Effiel%20Tower%20-%20Paris%20Highlights.jpg"
+                 alt="Paris"/>
+        </div>
+        <div class="photo-and-cityname">
+            <h4 class="cityname">Lyon</h4>
+            <img class="city-thumbnail" src="https://image.arrivalguides.com/415x300/09/128e81d0745c4858dc799a49688157fc.jpg" alt="Lyon"/>
+        </div>
+        <div class="photo-and-cityname">
+            <h4 class="cityname">Bordeaux</h4>
+            <img class="city-thumbnail" src="https://www.easyjet.com/ejcms/cache/medialibrary/Images/JSS/Destinations/Hero/France_Bordeaux_3840x2160.jpg"
+                 alt="Lyon"/>
+        </div>
+    </div>
+    <div class="map-container">
+        Carte Ici
+    </div>
 </div>
 
 {{/unless}}

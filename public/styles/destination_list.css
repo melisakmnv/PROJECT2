@@ -1,0 +1,45 @@
+.destinations-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .grid-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .city-thumbnail {
+    display: flex;
+    border-radius: 20px;
+    object-fit: cover;
+    width: 350px;
+    height: 220px;
+    border: 1px solid rgba(231, 231, 231, 0.541);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin: 0 20px;
+  }
+  .photo-and-cityname {
+    margin: 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .photo-and-cityname h4 {
+    position: absolute;
+    font-size: 42px;
+    font-family: 'KoHo', sans-serif;
+    color: #f8f8f8;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.86),
+    0px 8px 13px rgba(0, 0, 0, 0.42),
+    0px 18px 23px rgba(0, 0, 0, 0.35);
+    transition: ease-in-out 300ms;
+  }
+  .photo-and-cityname h4:hover {
+    transition: ease-in-out 300ms;
+    color: #ffffff;
+    letter-spacing: 5px;
+  }
+  .map-container {
+    width: 800px;
+    margin-left: 20px;
+  }
