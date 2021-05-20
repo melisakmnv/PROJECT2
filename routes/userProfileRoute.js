@@ -25,13 +25,46 @@ router.get('/edit', (req, res, next) => {
 })
 
 
-router.post('/edit', (req, res, next) => {
-  UserModel.findByIdAndUpdate(req.session.currentUser, req.body)
-  .then((currentUser) => {
-    res.redirect('/dashboard/myprofile')
-  })
-  .catch(next);
+// router.post('/edit', (req, res, next) => {
+//   const foundUsername = 
+//   UserModel.findByIdAndUpdate(req.session.currentUser, req.body)
+//   .then((currentUser) => {
+//     res.redirect('/dashboard/myprofile')
+//   })
+//   .catch(next);
+// })
+
+router.post('/edit', async (req, res, next) => {
+  try  {
+    const newUpdateUser = {...req.body}
+    const foundUsername = await UserModel.findOne({ username: newUpdateUser.username});
+    // const foundEmail = await UserModel.findOne({ email: newUpdateUser.email});
+    if (foundUsername){
+      req.flash("warning", "This username is already used");
+      res.redirect('/dashboard/myprofile/edit');
+    // } else if (foundEmail) {
+    //   req.flash("warning", "This email is already used");
+    //   res.redirect('/dashboard/myprofile/edit');
+    } else {
+      await UserModel.findByIdAndUpdate (req.session.currentUser, req.body);
+      req.flash("success", "Your profile has been updated !");
+      res.redirect('/dashboard/myprofile')
+    }
+  }
+  catch (err) {
+    next(err);
+  }
 })
+
+// router.post('/edit', async (req, res, next) => {
+//   try {
+//     await UserModel.findByIdAndUpdate(req.session.currentUser, req.body);
+//     res.redirect('/dashboard/myprofile')
+//   }
+//   catch (err) {
+//     next(err);
+//   }
+// })
 
 // DELETE
 

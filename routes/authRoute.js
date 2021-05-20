@@ -73,8 +73,9 @@ router.post('/signup', async (req, res, next) => {
 
 router.post('/signout', (req, res) => {
   req.session.destroy();
-  req.flash("success", "You have just logged out ! ");
-  res.redirect('/');
+  // req.flash("success", "You have just logged out ! ");
+  res.redirect('/');  
 });
+
 
 module.exports = router;
