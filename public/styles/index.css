@@ -32,7 +32,7 @@ header {
 }
 
 main {
-  position:relative;
+  position: relative;
   top: 10vh;
   /* bottom: 5vh; */
   width: 100%;
@@ -58,6 +58,7 @@ main {
   color: rgb(240, 235, 227);
   height: 90vh;
   width: 100%;
+  opacity: 0.6;
 }
 
 /* title : "NEOTRIP" */
@@ -67,7 +68,7 @@ main {
   -webkit-text-stroke-width: 6px;
   -webkit-text-stroke-color: rgb(255, 169, 147);
   margin-bottom: 50px;
-  font-weight:900;
+  font-weight: 900;
   font-family: 'Merriweather Sans', sans-serif;
 }
 
@@ -86,8 +87,6 @@ main {
   background-color: #016475;
 }
 
-
-
 /* SECTION 2 (explaination Neotrip) */
 
 #index-section-two {
@@ -104,5 +103,5 @@ main {
 }
 
 .main-page-image {
-  width : 40%;
+  width: 40%;
 }
