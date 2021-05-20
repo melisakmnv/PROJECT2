@@ -91,7 +91,7 @@ app.use(function (err, req, res, next) {
 
 app.listen(process.env.PORT);
 
-console.log("let's go");
+console.log("let's go Neotrip !");
 
 // Cannot connect to .env
 
