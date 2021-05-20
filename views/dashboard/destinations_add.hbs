@@ -1,6 +1,6 @@
 <div class="body-destination-manage">
 <div class="big-container destination-manage-wrapper flexed-item">
-  <form action="/dashboard/destinations_add" method="post" class="add-destination-form" 
+  <form action="/destinations/activity_add" method="post" class="add-destination-form" 
   {{!-- enctype="multiparty/form-data" --}}
   >
 <div class="form-add-edit-blocks">
@@ -8,26 +8,23 @@
   <div class="form-item-wrapper flexed-item">
     <label for="category" class="label-main-cat label">Category</label>
     <select id="category" class="select" name="category" required>
+
         <option value="-1" disabled selected>Choose a category</option>
-        <option value="restaurant">Restaurants</option>
-        <option value="nature">Nature</option>
-        <option value="culture">Culture</option>
+        <option value="Restaurant">Restaurant</option>
+        <option value="Nature">Nature</option>
+        <option value="Culture">Culture</option>
     </select>
   </div>
   </div>
 <p><b>Accessibility:</b></p>
-<div class="form-add-edit-blocks">
-  <input type="checkbox" id="plane" name="plane">
-  <label for="plane">Plane</label>
-  <input type="checkbox" id="train" name="train">
-  <label for="train">Train</label>
-  <input type="checkbox" id="bus" name="bus">
-  <label for="bus">Bus</label>
-  <input type="checkbox" id="bicycle" name="bicycle">
-  <label for="bicycle">Bicycle</label>
-  <input type="checkbox" id="walk" name="walk">
-  <label for="walk">Walk</label>
-</div>
+<select id="category" class="form-add-edit-blocks select" name="accessibility" required>
+        <option value="-1" disabled selected>Choose a transportation</option>
+        <option value="Plane">Plane</option>
+        <option value="Train">Train</option>
+        <option value="Bus">Bus</option>
+        <option value="Bicycle">Bicycle</option>
+        <option value="Walk">Walk</option>
+    </select>
  <div class="form-item-wrapper flexed-item">
       <label for="destination-img" class="label-price label">Image</label>
       <input id="destination-img" type="file" class="sneaker-price input">
@@ -35,22 +32,42 @@
  <div class="form-add-edit-blocks">
  <p>Destination characteristics:</p>
 
-  <input type="checkbox" id="family-friendly" name="family-friendly">
-  <label for="family-friendly">Family-friendly</label>
-  <input type="checkbox" id="food" name="food">
+ <select name="id_tags" id="tags" class="select" required>
+    {{!-- <option value="-1" disabled selected>Choose as many tags as you want</option>
+    {{#each tags}}
+    <option value="{{this._id}}">{{this.label}}</option>
+    {{/each}}
+ --}}
+  <option value="60a627cf76bdb327604215b5">Family-friendly</option>
+  <option value="60a627cf76bdb327604215b6">Food</option>
+  {{!-- <option value="family-friendly">family-friendly</option>
+  <option value="family-friendly">family-friendly</option>
+  <option value="family-friendly">family-friendly</option>
+  <option value="family-friendly">family-friendly</option>
+  <option value="family-friendly">family-friendly</option>
+   --}}
+
+ 
+  {{!-- <input type="checkbox" id="food" name="id_tags">
   <label for="food">Food</label>
-  <input type="checkbox" id="hiking" name="hiking">
+  <input type="checkbox" id="hiking" name="id_tags">
   <label for="hiking">Hiking</label>
-  <input type="checkbox" id="swim" name="swim">
+  <input type="checkbox" id="swim" name="id_tags">
   <label for="swim">Swim</label>
-  <input type="checkbox" id="trek" name="trek">
+  <input type="checkbox" id="trek" name="id_tags">
   <label for="trek">Trek</label>
-  <input type="checkbox" id="animal-friendly" name="animal-friendly">
+  <input type="checkbox" id="animal-friendly" name="id_tags">
   <label for="animal-friendly">Animal-friendly</label>
-  <input type="checkbox" id="culture" name="culture">
+  <input type="checkbox" id="culture" name="id_tags">
   <label for="culture">Culture</label>
-  <input type="checkbox" id="children-friendly" name="children-friendly">
+  <input type="checkbox" id="children-friendly" name="id_tags">
   <label for="children-friendly">Children-friendly</label>
+  <input type="checkbox" id="romantic" name="id_tags">
+  <label for="romantic">Romantic</label> --}}
+  </select>
+
+<label for="city_name">City:</label>
+  <input type="text" id="city" name="city_name" class="city">
 </div>
 <div class="form-add-edit-blocks">
  <label for="name">Description:</label>

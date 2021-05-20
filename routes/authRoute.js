@@ -25,9 +25,9 @@ router.post('/signin', async (req, res) => {
       req.flash("error", "Password incorrect");
       res.redirect('/auth/signin');
     } else {
-      const userObject = foundUser.toObject();
-      delete userObject.password;
-      req.session.currentUser = userObject;
+      // const userObject = foundUser.toObject();
+      // delete userObject.password;
+      req.session.currentUser = foundUser;
       // req.flash("success", "Successfully logged in...");
       res.redirect('/dashboard');
     }

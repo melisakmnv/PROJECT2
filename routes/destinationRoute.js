@@ -2,17 +2,17 @@ const express = require("express");
 const router = new express.Router();
 
 const ActivityModel = require("../models/activityModel");
-// const TagModel = require("../models/tagModel");
+const TagModel = require("../models/tagModel");
 // const UserModel = require("../models/userModel");
 
-router.get("/", (req, res, next) => {
-  ActivityModel.find()
-  .then((destinations) => {
-    console.log(destinations);
-    res.render("destination/destinations_list.hbs", { destinations });
-  })
-  .catch(err => next(err));
-});
+// router.get("/", (req, res, next) => {
+//   ActivityModel.find()
+//   .then((destinations) => {
+//     console.log(destinations);
+//     res.render("destinations_list.hbs", { destinations });
+//   })
+//   .catch(err => next(err));
+// });
 
 // Go to city page
 
@@ -47,7 +47,8 @@ router.post("/:id/edit", (req, res, next) => {
 // ADD Activity
 
 router.get("/activity_add", (req, res) => {
-  res.render("destination/activity_add.hbs");
+  TagModel.find()
+  .then((tags) => res.render("destination/activity_add.hbs", { tags }));
 });
 
 router.post("/activity_add", (req, res, next) => {
@@ -56,7 +57,7 @@ router.post("/activity_add", (req, res, next) => {
     ActivityModel.create(activity)
       .then((dbResult) => {
         console.log(dbResult);
-        res.redirect(`/destinations/${dbResult._id}`);
+        res.redirect("/destinations");
       })
       .catch((err) => {
         console.log(err)

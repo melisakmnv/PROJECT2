@@ -1,0 +1,14 @@
+<h1>Most popular destinations</h1>
+  <div class="conteneur-destinations">
+    {{#each destinations}}
+    
+      <div class="activity-img">
+        <img
+          src="{{this.city_photo.[0]}}"
+          alt="{{this.city_name}}"
+        />
+      </div>
+      <p class="activity-name">{{this.city_name}}</p>
+    {{/each}}
+
+

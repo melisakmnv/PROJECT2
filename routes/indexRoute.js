@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const activityModel = require("./../models/activityModel")
+const ActivityModel = require("./../models/activityModel")
 
 
 //HOMEPAGE
@@ -11,9 +11,15 @@ router.get("/", (req, res) => {
 
 //MOST POPULAR DESTINATIONS (Ask how to sort by most popular)
 router.get("/destinations", (req, res) => {
-  activityModel
+  ActivityModel
     .find()
-    .then((destinations) => res.render("destinations_nonuser.hbs", { destinations }));
+    .then((destinations) =>{
+      console.log(destinations)
+      res.render("destinations_list.hbs", { destinations })
+    })
+    .catch(err => {console.log(err);
+    next(err)});
+    
 });
 
 
