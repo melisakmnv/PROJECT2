@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/www",
+    "start": "node ./app.js",
     "server": "nodemon ./bin/www -e js, hbs",
     "dev": "nodemon app.js -e .hbs,.js",
     "seed:user": "node ./bin/seed.user.js",
