@@ -23,6 +23,17 @@ const activities = [
     id_tags: ["Romantic", "Culture", "Food", "Family-friendly"],
     description: "Discover the french little Paris in the south West of France. Charming, dynamic, young city.",
     creator: "",
+  },
+  {
+    category: "City",
+    accessibility:["Plane", "Train", "Bus", "Bicycle", "Walk"],
+    itinerary: "",
+    city_name: "Lyon",
+    city_photo: ["https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/f7/4d/lyon.jpg?w=1600&h=1100&s=1"],
+    category_photo: [""],
+    id_tags: ["Romantic", "Culture", "Food", "Family-friendly"],
+    description: "In between the mountains, you will enjoy the Bouchons Lyonnais",
+    creator: "",
   }
 ];
 
