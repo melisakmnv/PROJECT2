@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 router.get("/destinations", (req, res) => {
   activityModel
     .find()
-    .then((destinations) => res.render("destinations.hbs", { destinations }));
+    .then((destinations) => res.render("destinations_nonuser.hbs", { destinations }));
 });
 
 
