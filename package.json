@@ -8,7 +8,9 @@
     "start": "node ./bin/www",
     "server": "nodemon ./bin/www -e js, hbs",
     "dev": "nodemon app.js -e .hbs,.js",
-    "seed:user": "node ./bin/seed.user.js"
+    "seed:user": "node ./bin/seed.user.js",
+    "seed:activity": "node ./bin/seed.user.js",
+    "seed:tag": "node ./bin/seed.user.js"
   },
   "keywords": [],
   "author": "",

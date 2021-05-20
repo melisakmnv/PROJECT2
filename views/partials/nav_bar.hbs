@@ -13,14 +13,14 @@
       <div>
         {{#unless isLoggedIn}}
           <a class='link_item' href='/aboutus'>Who are we</a>
-          <a class='link_item' href='/auth/signin'> |  Signin</a>
+          <a class='link_item' href='/auth/signin'> Signin</a>
         {{/unless}}
       </div>
 
       {{#if isLoggedIn}}
-        <a class='link_item' href='/dashboard/myprofile'> |  {{currentUser.username}}</a>
+        <a class='link_item' href='/dashboard/myprofile'> {{currentUser.username}}</a>
         <form method="POST" action="/auth/signout">
-         <button>| signout</button>
+         <button>signout</button>
         </form>
       {{/if}}
     </nav>

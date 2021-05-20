@@ -17,7 +17,7 @@ const search = document.querySelector('.search');
 const clear = document.querySelector('.clear')
 let new_input = document.querySelector('#new_input');
 
-// icon.addEventListener("click", () => search.classList.toggle('active'));
+// icon.addEventListener("click", () => search.classList.toggle('search:focus'));
 clear.addEventListener("click", () => new_input.value = '');
 
 
