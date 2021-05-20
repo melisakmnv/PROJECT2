@@ -4,43 +4,39 @@
 {{!-- non user --}}
 
 
- {{#unless isLoggedIn}}
- <h1>Hello</h1>
+{{#unless isLoggedIn}}
+<h1>Hello</h1>
 
-   <div class="conteneur-destinations">
-    
-      <div class="activity-img">
-        <img
-          src="https://lp-cms-production.imgix.net/image_browser/Effiel%20Tower%20-%20Paris%20Highlights.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850"
-          alt="Paris"/>
-      </div>
-      <p class="activity-name">Paris</p>
-   </div>
+<div class="conteneur-destinations">
 
-      <div class="conteneur-destinations">
-    
-      <div class="activity-img">
-        <img
-          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/f7/4d/lyon.jpg?w=1600&h=1100&s=1"
-          alt="Lyon"/>
-      </div>
-      <p class="activity-name">Lyon</p>
-   </div>
+  <div class="activity-img">
+    <img
+      src="https://lp-cms-production.imgix.net/image_browser/Effiel%20Tower%20-%20Paris%20Highlights.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850"
+      alt="Paris"/>
+  </div>
+  <p class="activity-name">Paris</p>
+</div>
 
- {{/unless}}
+<div class="conteneur-destinations">
+
+  <div class="activity-img">
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/f7/4d/lyon.jpg?w=1600&h=1100&s=1"
+      alt="Lyon"/>
+  </div>
+  <p class="activity-name">Lyon</p>
+</div>
+
+{{/unless}}
 
 
 {{!-- user --}}
 {{#if isLoggedIn}}
-  <div class="conteneur-destinations">
-    {{#each destinations}}
-    
-      <div class="activity-img">
-        <img
-          src="{{this.city_photo.[0]}}"
-          alt="{{this.city_name}}"
-        />
-      </div>
-      <p class="activity-name">{{this.city_name}}</p>
-    {{/each}}
-{{/if}}
+<div class="conteneur-destinations">
+  {{#each destinations}}
+
+  <div class="activity-img">
+    <img src="{{this.city_photo.[0]}}" alt="{{this.city_name}}" />
+  </div>
+  <p class="activity-name">{{this.city_name}}</p>
+  {{/each}}
+  {{/if}}

@@ -1,8 +1,8 @@
-const express = require("express");
+const express = require('express');
 const router = new express.Router();
-
-const ActivityModel = require("../models/activityModel");
-const TagModel = require("../models/tagModel");
+const UserModel = require('../models/userModel');
+const ActivityModel = require('../models/activityModel');
+const TagModel = require('../models/tagModel');
 // const UserModel = require("../models/userModel");
 
 // router.get("/", (req, res, next) => {
@@ -16,54 +16,54 @@ const TagModel = require("../models/tagModel");
 
 // Go to city page
 
-  router.get("/:id", (req, res, next) => {
-    ActivityModel.findById(req.params.id)
-    .then((city) => {
-      // console.log(activity);
-      res.render("destination/city.hbs", { city });
-    })
-    .catch(next);
-  });
-
-
-// Update City
-
-router.get("/:id/edit", (req, res, next) => {
+router.get('/:id', (req, res, next) => {
   ActivityModel.findById(req.params.id)
     .then((city) => {
-      res.render("destination/destinations_edit.hbs", { city });
+      // console.log(activity);
+      res.render('destination/city.hbs', { city });
     })
     .catch(next);
 });
 
-router.post("/:id/edit", (req, res, next) => {
+// Update City
+
+router.get('/:id/edit', (req, res, next) => {
+  ActivityModel.findById(req.params.id)
+    .then((city) => {
+      res.render('destination/destinations_edit.hbs', { city });
+    })
+    .catch(next);
+});
+
+router.post('/:id/edit', (req, res, next) => {
   ActivityModel.findByIdAndUpdate(req.params.id, req.body)
     .then((city) => {
-      res.redirect("/destinations/:id");
+      res.redirect('/destinations/:id');
     })
     .catch(next);
 });
 
 // ADD Activity
 
-router.get("/activity_add", (req, res) => {
-  TagModel.find()
-  .then((tags) => res.render("destination/activity_add.hbs", { tags }));
+router.get('/activity_add', (req, res) => {
+  TagModel.find().then((tags) =>
+    res.render('destination/activity_add.hbs', { tags })
+  );
 });
 
-router.post("/activity_add", (req, res, next) => {
-  const activity = {...req.body}
-  console.log(req.body)
-    ActivityModel.create(activity)
-      .then((dbResult) => {
-        console.log(dbResult);
-        res.redirect("/destinations");
-      })
-      .catch((err) => {
-        console.log(err)
-        res.render("destination/activity_add.hbs");
-      });
-  });
+router.post('/activity_add', (req, res, next) => {
+  const activity = { ...req.body };
+  console.log(req.body);
+  ActivityModel.create(activity)
+    .then((dbResult) => {
+      console.log(dbResult);
+      res.redirect('/destinations');
+    })
+    .catch((err) => {
+      console.log(err);
+      res.render('destination/activity_add.hbs');
+    });
+});
 
 // Delete
 
@@ -77,4 +77,22 @@ router.post("/activity_add", (req, res, next) => {
 //   }
 // });
 
-  module.exports = router;
+// Add fav
+
+router.post('/wishlist', async (req, res, next) => {
+
+  !req.session.currentUser.wishlist.includes(req.body_id) &&
+    req.session.currentUser.wishlist.push(req.body._id);
+
+  const dbUser = await UserModel.findById(req.session.currentUser._id);
+  !dbUser.wishlist.includes(req.body_id) &&
+    await UserModel.findByIdAndUpdate(req.session.currentUser._id, {
+      $push: { wishlist: req.body._id },
+    });
+  res.redirect(`/destinations/${req.body._id}`);
+
+  // .then()
+  // .catch()
+});
+
+module.exports = router;

@@ -8,14 +8,23 @@
 
 {{!-- CATEGORIES --}}
 
-<aside class="tag-wrapper">
+
+  <form method="POST" action="/destinations/wishlist">
+  <label for="_id"></label>
+  <input hidden id="_id" name="_id" type="text" value="{{city._id}}">
+  <button class="productButton">Add to Favourites</button>
+</form>
+
   {{#each category}}
-    {{!-- <h4 class="tag-title">All Tags</h4> --}}
-    <ul id="tag_list" class="tag-list" data-category="{{activity.category}}">
-      <li class="category-list-item">
-          {{> carousel_city}}
-      </li>
-    </ul>
+  {{!-- <h4 class="tag-title">All Tags</h4> --}}
+  <ul id="tag_list" class="tag-list" data-category="{{activity.category}}">
+    <li class="category-list-item">
+      {{> carousel_city}}
+    </li>
+  </ul>
+
   {{/each}}
-    
-</aside>
+<aside class="tag-wrapper"></aside>
+
+
+

@@ -14,7 +14,7 @@ router.get("/destinations", (req, res) => {
   ActivityModel
     .find()
     .then((destinations) =>{
-      console.log(destinations)
+
       res.render("destinations_list.hbs", { destinations })
     })
     .catch(err => {console.log(err);
