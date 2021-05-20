@@ -1,3 +1,4 @@
+const { log } = require("debug");
 const express = require("express");
 const router = express.Router();
 const ActivityModel = require("./../models/activityModel")
@@ -9,18 +10,39 @@ router.get("/", (req, res) => {
 });
 
 
-//MOST POPULAR DESTINATIONS (Ask how to sort by most popular)
+//DESTINATION LIST
 router.get("/destinations", (req, res) => {
   ActivityModel
     .find()
-    .then((destinations) =>{
+    .then((activities) =>{
 
-      res.render("destinations_list.hbs", { destinations })
+      const citiesName = activities.map(function(city) {
+        return city.city_name
+      });
+
+      const newCitiesName = [...new Set(citiesName)];
+
+      res.render("destinations_list.hbs", { newCitiesName })
     })
     .catch(err => {console.log(err);
     next(err)});
-    
 });
+
+
+// router.get('/...', (req, res, next) => {
+//   Model.find()
+//   .then((activities) => {
+//       const citiesName = activities.map(function(city) {
+//           return city.name
+//       })
+//       console.log(citiesName)
+//       res.render(/.... , {citiesName})
+//   })
+//   .catch((err) => {
+//       next(err)
+//   })
+// })
+
 
 // NONE USER //
 

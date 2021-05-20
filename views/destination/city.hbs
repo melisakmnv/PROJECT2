@@ -1,15 +1,19 @@
-<div class="main-content-city flexed-item big-container"></div>
 <h1>{{city.city_name}}</h1>
 
-<img src="{{city.city_photo" alt="Photo of {{city.city_name}}">
+<img src="{{city.city_photo.[0]}}" alt="Photo of {{city.city_name}}">
 
 <p>{{city.description}}</p>
 
 <p>Accessible by :
   <ul>
-    <li></li>
+{{#each city.accessibility}}
+    <li>{{this}}</li>
+{{/each}}
   </ul>
 </p>
+
+
+{{!-- ADD TO WISHLIST BUTTON --}}
 
   <form method="POST" action="/destinations/wishlist">
   <label for="_id"></label>
@@ -17,16 +21,41 @@
   <button class="productButton">Add to Favourites <i class="far fa-heart"></i></button>
 </form>
 
-  {{#each category}}
-  {{!-- <h4 class="tag-title">All Tags</h4> --}}
-  <ul id="tag_list" class="tag-list" data-category="{{activity.category}}">
-    <li class="category-list-item">
-      {{> carousel_city}}
-    </li>
-  </ul>
+
+
+{{!-- ACTIVITIES IN THIS CITY --}}
+
+
+<h2>Restaurants</h2>
+
+  {{#each restaurant}}
+
+   <div>
+     <img src="{{this.activity_photo.[0]}}" alt="Photo of {{this.activity_name}}">
+     <p>{{this.activity_name}}</p>
+   </div>
 
   {{/each}}
-<aside class="tag-wrapper"></aside>
 
 
+<h2>Nature</h2>
 
+  {{#each nature}}
+
+   <div>
+     <img src="{{this.activity_photo.[0]}}" alt="Photo of {{this.activity_name}}">
+     <p>{{this.activity_name}}</p>
+   </div>
+
+  {{/each}}
+
+<h2>Culture</h2>
+
+  {{#each culture}}
+
+   <div>
+     <img src="{{this.activity_photo.[0]}}" alt="Photo of {{this.activity_name}}">
+     <p>{{this.activity_name}}</p>
+   </div>
+
+  {{/each}}

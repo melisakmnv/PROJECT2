@@ -15,12 +15,41 @@ const TagModel = require('../models/tagModel');
 // });
 
 // Go to city page
-
+      // Paris    Bordeaux
 router.get('/:id', (req, res, next) => {
-  ActivityModel.findById(req.params.id)
-    .then((city) => {
-      // console.log(activity);
-      res.render('destination/city.hbs', { city });
+
+  ActivityModel.find({city_name: req.params.id})
+    .then((activities) => {
+
+      const restaurant = activities.filter((activity) => {
+        return  activity.category === "Restaurant"
+      });
+
+      // console.log("RESTAURANT");
+      // console.log(restaurant);
+
+      const culture = activities.filter((activity) => {
+        return  activity.category === "Culture"
+      });
+
+      // console.log("CULTURE");
+      // console.log(culture);
+
+      const nature = activities.filter((activity) => {
+        return  activity.category === "Nature"
+      });
+
+      // console.log("NATURE");
+      // console.log(nature);
+
+      const city = activities.filter((city) => {
+        return  city.category === "City"
+      });
+
+      // console.log("CITY");
+      // console.log(city);
+
+      res.render('destination/city.hbs', { city, restaurant, culture, nature });
     })
     .catch(next);
 });
@@ -47,7 +76,7 @@ router.post('/:id/edit', (req, res, next) => {
 
 router.get('/activity_add', (req, res) => {
   TagModel.find().then((tags) =>
-    res.render('destination/activity_add.hbs', { tags })
+    res.render('destination/destinations_add.hbs', { tags })
   );
 });
 
@@ -61,7 +90,7 @@ router.post('/activity_add', (req, res, next) => {
     })
     .catch((err) => {
       console.log(err);
-      res.render('destination/activity_add.hbs');
+      res.render('destination/destinations_add.hbs');
     });
 });
 

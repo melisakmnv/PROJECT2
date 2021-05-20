@@ -1,12 +1,10 @@
-<h1>Most popular destinations</h1>
+<h1>Destinations</h1>
 
 
 {{!-- non user --}}
 
 
 {{#unless isLoggedIn}}
-<h1>Hello</h1>
-
 <div class="conteneur-destinations">
 
   <div class="activity-img">
@@ -31,12 +29,19 @@
 
 {{!-- user --}}
 {{#if isLoggedIn}}
-<div class="conteneur-destinations">
-  {{#each destinations}}
 
-  <div class="activity-img">
-    <img src="{{this.city_photo.[0]}}" alt="{{this.city_name}}" />
-  </div>
-  <p class="activity-name">{{this.city_name}}</p>
-  {{/each}}
-  {{/if}}
+
+
+
+{{!-- 
+ <a href="/destinations/">Paris</a>
+  <a href="/destinations/Bordeaux">Bordeaux</a> --}}
+
+{{#each newCitiesName}}
+<a href="/destinations/{{this}}">
+  <img class="activity-img" src="/images/temporary-logo.png" alt="Photo of {{this}}" />
+  <p class="activity-name">{{this}}</p>
+</a>
+{{/each}} 
+
+{{/if}}

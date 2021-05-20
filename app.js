@@ -1,5 +1,5 @@
-require('./config/mongodb');
 require('dotenv').config();
+require('./config/mongodb');
 
 // ------------------------------//
 // STEP 1 : Require dependencies //
