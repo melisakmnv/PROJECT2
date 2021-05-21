@@ -11,7 +11,7 @@
     border-radius: 45px;
     overflow: hidden;
     transition: 0.5s;
-    box-shadow: 0 0 0 5px rgb(189, 188, 188);
+    box-shadow: 0 0 0 5px rgb(114, 114, 114);
   }
   
   .search .icon {
@@ -34,7 +34,7 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    border: 3px solid rgb(189, 188, 188);
+    border: 3px solid rgb(114, 114, 114);
     border-radius: 15px;
     transform: translate(-4px, -4px);
   }
@@ -44,7 +44,7 @@
     position: absolute;
     width: 3px;
     height: 12px;
-    background-color: rgb(189, 188, 188);
+    background-color: rgb(114, 114, 114);
     transform: translate(6px, 6px) rotate(315deg);
   }
   
@@ -90,7 +90,7 @@
     content: '';
     width: 1px;
     height: 15px;
-    background-color: rgb(189, 188, 188);
+    background-color: rgb(114, 114, 114);
     transform: rotate(45deg);
   }
   
@@ -99,7 +99,7 @@
     content: '';
     width: 1px;
     height: 15px;
-    background-color: rgb(189, 188, 188);
+    background-color: rgb(114, 114, 114);
     transform: rotate(315deg);
   }
   

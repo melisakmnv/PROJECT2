@@ -7,6 +7,7 @@ const ActivityModel = require("./../models/activityModel");
 //DASHBOARD
 router.get("/", async (req, res, next) => {
   const user = await UserModel.findById(req.session.currentUser._id).populate("wishlist");
+  console.log("YOU ARE ON DASHBOARD");
   console.log(user)
   res.render("dashboard/dashboard.hbs", { user });
 });
