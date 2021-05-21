@@ -47,8 +47,8 @@ router.get("/:id", (req, res, next) => {
         return city.category === "City";
       });
 
-      // console.log("CITY");
-      // console.log(city);
+      console.log("CITY");
+      console.log(city);
 
       res.render("destination/city.hbs", { city, restaurant, culture, nature });
     })

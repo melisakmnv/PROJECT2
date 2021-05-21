@@ -1,7 +1,3 @@
-#dashboard-carousel-container {
-    height: 32vh;
-}
-
 #dashboard-carousel-container h1 {
     display: flex;
     flex-direction: column;
@@ -11,8 +7,7 @@
 #dashboard-menu {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    height:50vh;
+    justify-content: center;
 }
 
 
@@ -26,18 +21,22 @@
 }
 
 .dashboard-img-3 {
-    width: 43%;
-    margin: 8%;
-}
-
-.dashboard-img-4 {
     width: 270px;
     margin: 20px;
 }
 
-.dashboard-options {
+.dashboard-options-one, .dashboard-options-three, .dashboard-options-two {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.dashboard-options-one {
+    margin-right: 190px;
+}
+
+
+.dashboard-options-three {
+    margin-left: 190px;
 }

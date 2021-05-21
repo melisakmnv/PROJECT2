@@ -1,15 +1,15 @@
-<div>MY WISHLIST</div>
+<h1>My Wishlist</h1>
 
 {{#each user.wishlist}}
 
 <div class="destinations-container">
   <div class="grid-container">
     <div class="photo-and-cityname">
-      <h4 class="cityname">{{destinations.city_name}}</h4>
+      <h4 class="cityname">{{this.city_name}}</h4>
       <img
         class="city-thumbnail"
-        src="{{destinations.city_photo}}"
-        alt="Photo of {{destinations.city_name}}"
+        src="{{this.city_photo}}"
+        alt="Photo of {{this.city_name}}"
       />
     </div>
 

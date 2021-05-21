@@ -1,17 +1,18 @@
-<h1>{{city.city_name}}</h1>
+{{#each city}}
+<h1>{{this.city_name}}</h1>
 
-<img src="{{city.city_photo.[0]}}" alt="Photo of {{city.city_name}}">
+<img src="{{this.city_photo.[0]}}" alt="Photo of {{this.city_name}}">
 
-<p>{{city.description}}</p>
+<p>{{this.description}}</p>
 
 <p>Accessible by :
   <ul>
-{{#each city.accessibility}}
+{{#each this.accessibility}}
     <li>{{this}}</li>
 {{/each}}
   </ul>
 </p>
-
+{{/each}}
 
 {{!-- ADD TO WISHLIST BUTTON --}}
 
