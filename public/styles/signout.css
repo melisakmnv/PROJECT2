@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+/* LOG OUT */
+
+
+.nav_bar_username {
+  cursor: pointer;
+}
+
+.signout_menu {
+  border-radius: 10px;
+  transition: 0.5s;
+  visibility: hidden;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+}
+.signout_menu ul {
+  width: 240px;
+  list-style-type: none;
+  padding: 14px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px rgba(246, 246, 246, 0.38) solid;
+  background: #ffffff;
+  border-radius: 24px;
+  -moz-box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+}
+
+.signout_menu li {
+  font-size: 20px;
+  font-family: 'Nunito', sans-serif;
+  display: block;
+  padding: 9px 0;
+  width: 240px;
+  text-align: center;
+}
+
+.signout_menu a {
+  text-decoration: none;
+  color: rgb(71, 71, 71);
+}
+
+.signout_menu li:hover {
+background-color: rgba(250, 250, 250, 0.76);
+  width: 240px;
+}
+
+.show {
+  visibility: visible;
+}

@@ -154,7 +154,6 @@ button.invisible_btn {
   transform: translateX(0);
 }
 
-/* I modified this -50% to 0 and remove right */
 .overlay_left {
   transform: translateX(0);
 }
@@ -185,39 +184,3 @@ button.invisible_btn {
 }
 
 /* Transform text to modify */
-
-/* Signout */
-
-.nav_bar_username {
-  cursor: pointer;
-  width: 200px;
-}
-
-.signout_menu {
-  width: 150px;
-  border-radius: 10px;
-  transition: 0.5s;
-  visibility: hidden;
-}
-.signout_menu ul {
-  list-style-type: none;
-}
-
-.signout_menu li {
-  padding: 10px;
-  background-color: blanchedalmond;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.signout_menu a {
-  text-decoration: none;
-}
-
-.signout_menu li:hover {
-  background-color: saddlebrown;
-}
-
-.show {
-  visibility: visible;
-}
