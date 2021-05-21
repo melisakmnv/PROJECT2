@@ -1,44 +1,48 @@
-
 <section id="dashboard-carousel-container">
 
-  <h1>MY DASHBOARD</h1>
+<h1>MY DASHBOARD</h1>
 
-<div class="slider">
-	<div class="slide-track">
+<div class="destinations-container">
+
+    <div class="grid-container">
 
     {{#each user.wishlist}}
 
-		<div class="slide">
+		<div class="photo-and-cityname">
 		
-    	<div class="carousel-city-name">{{this.city}}</div>
-      <img class="carousel-city-photo" src="{{this.photo_city}}" alt="Photo of {{this.city}}"/>
+    	<div class="cityname">{{this.city_name}}</div>
+      <img class="city-thumbnail" src="{{this.city_photo}}" alt="Photo of {{this.city_name}}"/>
 
 		</div>
 
     {{/each}}
+        
+    </div>
 
-  </div>
 </div>
-
-<a href="/dashboard/mywishlist">Go to my Wishlist</div>
 
 </section>
 
 
+
+<a href="/dashboard/mywishlist">Go to my Wishlist</div>
+
+
+
 <section id="dashboard-menu">
 
-<a href="/map" class="dashboard-options">
+<a href="/map" class="dashboard-options-one">
     <img class="dashboard-img-1" src="/images/dashboard_map-icon.png" alt="Map icon">
     <h2>Access map</h2>
 </a>
 
-<a href="../dashboard/destinations_add" class="dashboard-options">
+<a href="../dashboard/destinations_add" class="dashboard-options-two">
     <img class="dashboard-img-2" src="/images/dashboard_add-destination-icon.png" alt="Add destination icon">
     <h2>Add a place or destination</h2>
 </a>
 
-<a href="/dashboard/myprofile" class="dashboard-options">
-    <img class="dashboard-img-4" src="/images/dashboard_myprofile-icon.png" alt="My profile icon">
+<a href="/dashboard/myprofile" class="dashboard-options-three">
+    <img class="dashboard-img-3" src="/images/dashboard_myprofile-icon.png" alt="My profile icon">
     <h2>My profile</h2>
 </a>
 
