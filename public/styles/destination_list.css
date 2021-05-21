@@ -1,7 +1,11 @@
+#destination-list-wrapper{
+  height: 80vh;
+  width: 100%
+}
+
 .destinations-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
   }
   .grid-container {
     display: flex;
