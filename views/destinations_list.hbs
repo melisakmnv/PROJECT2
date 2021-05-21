@@ -1,7 +1,8 @@
+<section id="destination-list-wrapper">
 <h1>Destinations</h1>
 
 
-{{!-- non user --}}
+{{!-- NON USER VIEW --}}
 
 
 {{#unless isLoggedIn}}
@@ -22,15 +23,44 @@
                  alt="Lyon"/>
         </div>
   </div>
-    <div class="map-container">
-        Carte Ici
+{{/unless}}
+
+
+
+{{!-- USER VIEW --}}
+
+{{#if isLoggedIn}}
+
+<div class="destinations-container">
+
+    <div class="grid-container">
+
+        {{#each objetPhoto}}
+
+        <a href="/destinations/{{this.name}}" class="photo-and-cityname">
+            <h4 class="cityname">{{this.name}}</h4>
+            <img class="city-thumbnail" src="{{this.photo}}"
+                 alt="Photo of {{this.name}}"/>
+        </a>
+
+        {{/each}} 
+        
+    </div>
+
+</div>
+
+{{/if}}
+
+
+<div class="map-container">
 <style type="text/css">
       /* Set the size of the div element that contains the map */
       #map {
-        height: 400px;
-        /* The height is 400 pixels */
-        width: 800px;
-        /* The width is the width of the web page */
+        height: 90%;
+        width: 160%;
+        position : fixed;
+        top :0;
+        right: 0;
       }
     </style>
     <script>
@@ -52,7 +82,6 @@
     </script>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
     <!--The div element for the map -->
     <div id="map"></div>
 
@@ -64,34 +93,4 @@
 
     </div>
 </div>
-
-{{/unless}}
-
-
-{{!-- user --}}
-{{#if isLoggedIn}}
-
-
-<div class="destinations-container">
-
-    <div class="grid-container">
-
-        {{#each objetPhoto}}
-
-        <a href="/destinations/{{this.name}}" class="photo-and-cityname">
-            <h4 class="cityname">{{this.name}}</h4>
-            <img class="city-thumbnail" src="{{this.photo}}"
-                 alt="Photo of {{this.name}}"/>
-        </a>
-
-        {{/each}} 
-        
-    </div>
-
-    {{!-- <div class="map-container">
-        Carte Ici
-    </div> --}}
-
-</div>
-
-{{/if}}
+</section>
