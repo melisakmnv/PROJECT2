@@ -1,10 +1,10 @@
 <div class='profile_main_box'>
   <div class='profile_box'>
-    {{> flash_message}}
-    <form method='post' action='/dashboard/myprofile/edit'>
+    <div class='user_avatar'></div>
+    <form method='post' action='/dashboard/myprofile/edit' enctype="multipart/form-data">
       <div>
         <label for='avatar'>Avatar : </label>
-        {{!-- <input name='avatar' id='avatar' type='file' value='{{currentUser.avatar}}' /> --}}
+        <input name='avatar' id='avatar' type='file' value='{{currentUser.avatar}}' />
       </div>
 
       <div class='user_info'>
@@ -20,10 +20,12 @@
         <label for='description'>Description : </label>
         <textarea name='description' id='description' type='text' value='{{currentUser.description}}'></textarea>
       </div>
-      <button type='submit'>Submit</button>
+      <button class="btn_profile" type='submit'>Submit</button>
     </form>
     <form method="GET" action="/dashboard/myprofile">
-      <button>Cancel</button>
+      <button class="btn_profile1" >Cancel</button>
     </form>
+
+    {{> flash_message}}
   </div>
 </div>
