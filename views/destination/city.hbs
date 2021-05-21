@@ -1,17 +1,18 @@
 {{#each city}}
 <h1>{{this.city_name}}</h1>
 
-<img src="{{this.city_photo.[0]}}" alt="Photo of {{this.city_name}}">
+<img class="city-image-yay" src="{{this.city_photo.[0]}}" alt="Photo of {{this.city_name}}">
 
-<p>{{this.description}}</p>
+<p class="thisdesc">{{this.description}}</p>
 
-<p>Accessible by :
+<p class="accessibleby">Accessible by :
   <ul>
 {{#each this.accessibility}}
-    <li>{{this}}</li>
+    <li class="listeee">{{this}}</li>
 {{/each}}
   </ul>
 </p>
+
 {{/each}}
 
 {{!-- ADD TO WISHLIST BUTTON --}}
@@ -60,36 +61,3 @@
    </div>
 
   {{/each}}
-
-
-{{!-- LES CODES DE MELISA --}}
-
-{{!-- 
-<div class="display-photo-container">
-    <div class="display-photo-row">
-        <div class="photo-and-cityname"> 
-            <h4 class="cityname">Paris</h4>
-            <img class="city-thumbnail" src="https://lp-cms-production.imgix.net/image_browser/Effiel%20Tower%20-%20Paris%20Highlights.jpg"
-                 alt="Paris"/>
-        </div>
-        <div class="photo-and-cityname">
-            <h4 class="cityname">Lyon</h4>
-            <img class="city-thumbnail" src="https://image.arrivalguides.com/415x300/09/128e81d0745c4858dc799a49688157fc.jpg" alt="Lyon"/>
-        </div>
-        <div class="photo-and-cityname">
-            <h4 class="cityname">Bordeaux</h4>
-            <img class="city-thumbnail" src="https://www.easyjet.com/ejcms/cache/medialibrary/Images/JSS/Destinations/Hero/France_Bordeaux_3840x2160.jpg"
-                 alt="Lyon"/>
-        </div>
-    </div>
-</div> --}}
-
-{{!-- son css --}}
-
-{{!-- 
-
-.display-photo-row {
-  display: flex;
-}
-
- --}}

@@ -1,14 +1,15 @@
-@import url('./nav_bar.css');
+@import url('./city.css');
+@import url('./dashboard.css');
+@import url('./destination_list.css');
+@import url('./destinations_edit_add.css');
+@import url('./flash_message.css');
+@import url('./footer.css');
 @import url('./form.css');
+@import url('./myprofile.css');
+@import url('./nav_bar.css');
+@import url('./profile_edit.css');
 @import url('./reset.css');
 @import url('./search_bar.css');
-@import url('./myprofile.css');
-@import url('./dashboard.css');
-@import url('./footer.css');
-@import url('./profile_edit.css');
-@import url('./destinations_edit_add.css');
-@import url('./destination_list.css');
-@import url('./flash_message.css');
 @import url('./signout.css');
 
 /* FONTS */

@@ -1,0 +1,26 @@
+.city-image-yay {
+    border-radius: 10px;
+    object-fit: cover;
+    width: 400px;
+    border: 1px solid rgba(231, 231, 231, 0.541);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin: 0 20px;
+}
+
+.thisdesc {
+    margin : 20px;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.accessibleby {
+    margin : 20px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.listeee {
+    font-size: 1em;
+    margin-left: 60px;
+
+}

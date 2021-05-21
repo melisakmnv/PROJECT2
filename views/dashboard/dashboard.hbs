@@ -2,16 +2,17 @@
 
 <h1>MY DASHBOARD</h1>
 
-<div class="destinations-container">
+<a href="/dashboard/mywishlist" class="gotowish">Go to my Wishlist</div>
 
-    <div class="grid-container">
+<div class="destinations-container-dashboard">
+
+    <div class="grid-container-dashboard">
 
     {{#each user.wishlist}}
 
-		<div class="photo-and-cityname">
+		<div class="photo-and-cityname-dashboard">
 		
-    	<div class="cityname">{{this.city_name}}</div>
-      <img class="city-thumbnail" src="{{this.city_photo}}" alt="Photo of {{this.city_name}}"/>
+      <img class="city-thumbnail-wishlist" src="{{this.city_photo}}" alt="Photo of {{this.city_name}}"/>
 
 		</div>
 
@@ -19,13 +20,14 @@
         
     </div>
 
+
 </div>
 
 </section>
 
 
 
-<a href="/dashboard/mywishlist">Go to my Wishlist</div>
+
 
 
 

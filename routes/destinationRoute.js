@@ -5,7 +5,6 @@ const ActivityModel = require("../models/activityModel");
 const TagModel = require("../models/tagModel");
 const uploader = require("./../config/cloudinary");
 
-console.log(uploader)
 // const UserModel = require("../models/userModel");
 
 // router.get("/", (req, res, next) => {
@@ -81,7 +80,7 @@ router.get("/activity_add", (req, res, next) => {
   );
   // .catch(next);
 });
-console.log("bitch")
+
 
 router.post("/activity_add", uploader.single("photo"), (req, res, next) => {
   console.log("REQ BODY");

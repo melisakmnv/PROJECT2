@@ -1,6 +1,6 @@
-<section id="destination-list-wrapper">
 <h1>Destinations</h1>
 
+<section id="destination-list-wrapper">
 
 {{!-- NON USER VIEW --}}
 
@@ -61,13 +61,14 @@
 <style type="text/css">
       /* Set the size of the div element that contains the map */
       #map {
-        height: 90%;
-        width: 160%;
+        height: 80vh;
+        width: 145vh;
         position : fixed;
         top :0;
         right: 0;
       }
     </style>
+    <div id="map"></div>
     <script>
       // Initialize and add the map
       function initMap() {
@@ -78,6 +79,7 @@
           zoom: 4,
           center: uluru,
         });
+        console.log(map)
         // The marker, positioned at Uluru
         const marker = new google.maps.Marker({
           position: uluru,
@@ -85,10 +87,7 @@
         });
       }
     </script>
-  </head>
-  <body>
     <!--The div element for the map -->
-    <div id="map"></div>
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script

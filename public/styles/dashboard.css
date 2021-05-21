@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 8vh;
 }
 
 #dashboard-menu {
@@ -12,17 +13,17 @@
 
 
 .dashboard-img-1 {
-    width: 300px;
+    width: 200px;
 }
 
 .dashboard-img-2 {
-    width: 200px;
-    margin: 52px;
+    width: 120px;
+    margin: 45px;
 }
 
 .dashboard-img-3 {
-    width: 270px;
-    margin: 20px;
+    width: 190px;
+    margin: 15px;
 }
 
 .dashboard-options-one, .dashboard-options-three, .dashboard-options-two {
@@ -40,3 +41,46 @@
 .dashboard-options-three {
     margin-left: 190px;
 }
+
+.photo-and-cityname-dashboard div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'KoHo', sans-serif;
+    transition: ease-in-out 300ms;
+}
+
+.city-thumbnail-wishlist {
+    border-radius: 10px;
+    object-fit: cover;
+    width: 200px;
+    border: 1px solid rgba(231, 231, 231, 0.541);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin: 0 20px;
+  }
+
+.destinations-container-dashboard {
+    background:  rgb(247, 205, 189);
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.grid-container-dashboard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .gotowish {
+    font-size: 1.8em;
+    color:grey;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: grey;
+    margin: 25px 10px;
+    font-weight: 900;
+    text-shadow: 4px 4px 5px rgb(114, 114, 114);
+  }
