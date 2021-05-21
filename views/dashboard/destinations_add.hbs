@@ -1,6 +1,6 @@
 <div class="body-destination-manage">
 
-  <div class="big-container destination-manage-wrapper flexed-item">
+  <div class="big-container-add destination-manage-wrapper flexed-item">
 
     <form
       action="/destinations/activity_add"
@@ -11,7 +11,6 @@
 
       <h3 class="form-add-destination-title">Add a destination</h3>
 
-      <div class="form-add-edit-blocks">
 
         {{! CATEGORY }}
 
@@ -26,8 +25,8 @@
             <option value="City">City</option>
 
           </select>
-        </div>
-      </div>
+            <br>
+        {{!-- </div> --}}
 
       {{! CITY }}
 
@@ -41,8 +40,7 @@
 
       {{! ACCESSIBILITY }}
 
-      <p><b>Accessibility:</b></p>
-
+      <label for="accessibility" class="label-main-cat label">Accessibility:</label>
       <select
         id="category"
         class="form-add-edit-blocks select"
@@ -56,10 +54,11 @@
         <option value="Bicycle">Bicycle</option>
         <option value="Walk">Walk</option>
       </select>
+        <br>
 
       {{! ITINERARY }}
 
-      <div class="form-item-wrapper flexed-item">
+      {{!-- <div class="form-item-wrapper flexed-item"> --}}
         <label for="itinerary" class="label-price label">More details on how you
           got there (which line did you take ? etc)</label>
         <textarea
@@ -67,7 +66,8 @@
           name="itinerary"
           class="sneaker-price input"
         ></textarea>
-      </div>
+          <br>
+      {{!-- </div> --}}
 
       {{! IMAGE }}
 
@@ -83,9 +83,8 @@
 
       {{! TAGS }}
 
-      <div class="form-add-edit-blocks">
-        <p>Destination characteristics:</p>
-
+      {{!-- <div class="form-add-edit-blocks"> --}}
+       <label for="id_tags" class="label-price label">Tag:</label>
         <select name="id_tags" id="tags" class="select" required>
 
           <option value="60a627cf76bdb327604215b5">Family-friendly</option>
@@ -99,18 +98,20 @@
           <option value="60a668adc142cc77c100172e">Romantic</option>
 
         </select>
+        <br>
 
-      </div>
-      <div class="form-add-edit-blocks">
-        <label for="name">Description:</label>
+      {{!-- </div> --}}
+      {{!-- <div class="form-add-edit-blocks"> --}}
+        <label for="description">Description:</label>
         <textarea
           type="text"
           id="description"
           name="description"
           required
         ></textarea>
-      </div><br />
-      <button class="button-primary submit-btn">Submit</button>
+        <br>
+      <button class="button-add-edit submit-btn">Submit</button>
     </form>
+    </div>
   </div>
 </div>

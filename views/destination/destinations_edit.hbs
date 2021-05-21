@@ -1,64 +1,117 @@
 <div class="body-destination-manage">
-<div class="big-container destination-manage-wrapper flexed-item">
-  <form method="post" action="./destinations_edit/{{activity._id}}" class="edit-destination-form">
-    <h3 class="form-edit-title"> Edit destination</h3>
-     <div class="form-add-edit-blocks">
-      <div class="form-item-wrapper flexed-item">
-        <label for="category" class="label-main-cat label"><b>Category</b></label>
-      <select id="category" class="select" name="category" required>
-        <option value="-1" disabled selected>{{activity.category}}</option>
-        <option value="restaurant">Restaurants</option>
-        <option value="nature">Nature</option>
-        <option value="culture">Culture</option>
+
+  <div class="big-container-add destination-manage-wrapper flexed-item">
+
+    <form
+      action="./destinations_edit/{{activity._id}}"
+      method="post"
+      class="add-destination-form"
+      enctype="multipart/form-data"
+    >
+
+      <h3 class="form-add-destination-title">Add a destination</h3>
+
+
+        {{! CATEGORY }}
+
+        <div class="form-item-wrapper flexed-item">
+          <label for="category" class="label-main-cat label">Category</label>
+          <select id="category" class="select" name="category" required>
+
+            <option value="-1" disabled selected>{{activity.category}}</option>
+            <option value="Restaurant">Restaurant</option>
+            <option value="Nature">Nature</option>
+            <option value="Culture">Culture</option>
+            <option value="City">City</option>
+
+          </select>
+            <br>
+        {{!-- </div> --}}
+
+      {{! CITY }}
+
+      <label for="city_name">City name:</label>
+      <input type="text" id="city" name="city_name" class="city" value="{{activity.city_name}}"/>
+
+      {{! ACTIVITY NAME }}
+
+      <label for="activity_name">Title:</label>
+      <input type="text" id="activity_name" name="activity_name" class="city" value="{{activity.activity_name}}"/>
+
+      {{! ACCESSIBILITY }}
+
+      <label for="accessibility" class="label-main-cat label">Accessibility:</label>
+      <select
+        id="category"
+        class="form-add-edit-blocks select"
+        name="accessibility"
+        required
+      >
+        <option value="-1" disabled selected>How do you get there ?</option>
+        <option value="Plane">Plane</option>
+        <option value="Train">Train</option>
+        <option value="Bus">Bus</option>
+        <option value="Bicycle">Bicycle</option>
+        <option value="Walk">Walk</option>
       </select>
-    </div>
-    </div>
-   
-   <p><b>Accessibility:</b></p>
-  <div class="form-add-edit-blocks"> 
-  <input type="checkbox" id="plane" name="plane">
-  <label for="plane">Plane</label>
-  <input type="checkbox" id="train" name="train">
-  <label for="train">Train</label>
-  <input type="checkbox" id="bus" name="bus">
-  <label for="bus">Bus</label>
-  <input type="checkbox" id="bicycle" name="bicycle">
-  <label for="bicycle">Bicycle</label>
-  <input type="checkbox" id="walk" name="walk">
-  <label for="walk">Walk</label>
-</div>
-<div class="form-item-wrapper flexed-item">
-      <label for="destination-img" class="label-price label">Image</label>
-      <input id="destination-img" type="file" class="sneaker-price input">
- </div>
-  <div class="form-add-edit-blocks">
-    <b>Destination characteristics:</b>
+        <br>
 
-  <input type="checkbox" id="family-friendly" name="family-friendly">
-  <label for="family-friendly">Family-friendly</label>
-  <input type="checkbox" id="food" name="food">
-  <label for="food">Food</label>
-  <input type="checkbox" id="hiking" name="hiking">
-  <label for="hiking">Hiking</label>
-  <input type="checkbox" id="swim" name="swim">
-  <label for="swim">Swim</label>
-  <input type="checkbox" id="trek" name="trek">
-  <label for="trek">Trek</label>
-  <input type="checkbox" id="animal-friendly" name="animal-friendly">
-  <label for="animal-friendly">Animal-friendly</label>
-  <input type="checkbox" id="culture" name="culture">
-  <label for="culture">Culture</label>
-  <input type="checkbox" id="children-friendly" name="children-friendly">
-  <label for="children-friendly">Children-friendly</label>
+      {{! ITINERARY }}
+
+      {{!-- <div class="form-item-wrapper flexed-item"> --}}
+        <label for="itinerary" class="label-price label">More details on how you
+          got there (which line did you take ? etc)</label>
+        <textarea
+          id="itinerary"
+          name="itinerary"
+          class="sneaker-price input"
+        >{{activity.itinerary}}</textarea>
+          <br>
+      {{!-- </div> --}}
+
+      {{! IMAGE }}
+
+      <div class="form-item-wrapper flexed-item">
+        <label for="photo" class="label-price label">Image</label>
+        <input
+          id="photo"
+          name="photo"
+          type="file"
+          class="sneaker-price input"
+        />
+      </div>
+
+      {{! TAGS }}
+
+      {{!-- <div class="form-add-edit-blocks"> --}}
+       <label for="id_tags" class="label-price label">Tag:</label>
+        <select name="id_tags" id="tags" class="select" value="{{activity.id_tags}}" required>
+
+          <option value="60a627cf76bdb327604215b5">Family-friendly</option>
+          <option value="60a627cf76bdb327604215b6">Food</option>
+          <option value="60a668adc142cc77c1001728">Hiking</option>
+          <option value="60a668adc142cc77c1001729">Swim</option>
+          <option value="60a668adc142cc77c100172a">Trek</option>
+          <option value="60a668adc142cc77c100172b">Animal-friendly</option>
+          <option value="60a668adc142cc77c100172c">Culture</option>
+          <option value="60a668adc142cc77c100172d">Children-friendly</option>
+          <option value="60a668adc142cc77c100172e">Romantic</option>
+
+        </select>
+        <br>
+
+      {{!-- </div> --}}
+      {{!-- <div class="form-add-edit-blocks"> --}}
+        <label for="description">Description:</label>
+        <textarea
+          type="text"
+          id="description"
+          name="description"
+          required
+        >{{activity.description}}</textarea>
+        <br>
+      <button class="button-add-edit submit-btn">Edit</button>
+    </form>
+    </div>
   </div>
-    <div>
-    <label for="edit-description">Description:</label>
-  <textarea type="text" id="description" name="description" required>{{activity.description}}</textarea>
- </div>
-<br>
-    <button class="button-primary edit-destination-btn">Edit this destination</button>
-  </form>
 </div>
-</div>
-
-
