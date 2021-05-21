@@ -19,10 +19,19 @@ router.get("/destinations", (req, res) => {
       const citiesName = activities.map(function(city) {
         return city.city_name
       });
-
       const newCitiesName = [...new Set(citiesName)];
 
-      res.render("destinations_list.hbs", { newCitiesName })
+      const objetPhoto = newCitiesName.map(function(cityString) {
+        
+        const photo = activities.find(function(activity) {
+          if (activity.city_name === cityString) {
+            return true
+          }
+        })
+        const objet = {"name" : cityString, "photo" : photo.city_photo[0]}
+        return objet
+      })
+      res.render("destinations_list.hbs", { objetPhoto })
     })
     .catch(err => {console.log(err);
     next(err)});

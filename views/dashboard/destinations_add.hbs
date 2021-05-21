@@ -1,93 +1,116 @@
 <div class="body-destination-manage">
 
-<div class="big-container destination-manage-wrapper flexed-item">
+  <div class="big-container destination-manage-wrapper flexed-item">
 
-  <form action="/destinations/activity_add" method="post" class="add-destination-form" enctype="multipart/form-data">
+    <form
+      action="/destinations/activity_add"
+      method="post"
+      class="add-destination-form"
+      enctype="multipart/form-data"
+    >
 
-<h3 class="form-add-destination-title">Add a destination</h3>
+      <h3 class="form-add-destination-title">Add a destination</h3>
 
-<div class="form-add-edit-blocks">
+      <div class="form-add-edit-blocks">
 
-{{!-- CATEGORY --}}
+        {{! CATEGORY }}
 
-    <div class="form-item-wrapper flexed-item">
-      <label for="category" class="label-main-cat label">Category</label>
-         <select id="category" class="select" name="category" required>
+        <div class="form-item-wrapper flexed-item">
+          <label for="category" class="label-main-cat label">Category</label>
+          <select id="category" class="select" name="category" required>
 
-           <option value="-1" disabled selected>Choose a category</option>
-           <option value="Restaurant">Restaurant</option>
-           <option value="Nature">Nature</option>
-           <option value="Culture">Culture</option>
-           <option value="City">City</option>
+            <option value="-1" disabled selected>Choose a category</option>
+            <option value="Restaurant">Restaurant</option>
+            <option value="Nature">Nature</option>
+            <option value="Culture">Culture</option>
+            <option value="City">City</option>
 
-         </select>
-    </div>
-</div>
+          </select>
+        </div>
+      </div>
 
+      {{! CITY }}
 
-{{!-- CITY --}}
+      <label for="city_name">City name:</label>
+      <input type="text" id="city" name="city_name" class="city" />
 
-<label for="city_name">City name:</label>
-<input type="text" id="city" name="city_name" class="city">
+      {{! ACTIVITY NAME }}
 
-{{!-- ACTIVITY NAME --}}
+      <label for="activity_name">Title:</label>
+      <input type="text" id="activity_name" name="activity_name" class="city" />
 
-<label for="activity_name">Title:</label>
-<input type="text" id="activity_name" name="activity_name" class="city">
+      {{! ACCESSIBILITY }}
 
-{{!-- ACCESSIBILITY --}}
+      <p><b>Accessibility:</b></p>
 
-<p><b>Accessibility:</b></p>
-
-<select id="category" class="form-add-edit-blocks select" name="accessibility" required>
+      <select
+        id="category"
+        class="form-add-edit-blocks select"
+        name="accessibility"
+        required
+      >
         <option value="-1" disabled selected>How do you get there ?</option>
         <option value="Plane">Plane</option>
         <option value="Train">Train</option>
         <option value="Bus">Bus</option>
         <option value="Bicycle">Bicycle</option>
         <option value="Walk">Walk</option>
-</select>
+      </select>
 
-{{!-- ITINERARY --}}
+      {{! ITINERARY }}
 
- <div class="form-item-wrapper flexed-item">
-      <label for="itinerary" class="label-price label">More details on how you got there (which line did you take ? etc)</label>
-      <textarea id="itinerary" name="itinerary" class="sneaker-price input"></textarea>
- </div>
+      <div class="form-item-wrapper flexed-item">
+        <label for="itinerary" class="label-price label">More details on how you
+          got there (which line did you take ? etc)</label>
+        <textarea
+          id="itinerary"
+          name="itinerary"
+          class="sneaker-price input"
+        ></textarea>
+      </div>
 
-{{!-- IMAGE --}}
+      {{! IMAGE }}
 
- <div class="form-item-wrapper flexed-item">
-      <label for="photo" class="label-price label">Image</label>
-      <input id="photo" name="photo" type="file" class="sneaker-price input">
- </div>
+      <div class="form-item-wrapper flexed-item">
+        <label for="photo" class="label-price label">Image</label>
+        <input
+          id="photo"
+          name="photo"
+          type="file"
+          class="sneaker-price input"
+        />
+      </div>
 
+      {{! TAGS }}
 
- {{!-- TAGS --}}
+      <div class="form-add-edit-blocks">
+        <p>Destination characteristics:</p>
 
- <div class="form-add-edit-blocks">
- <p>Destination characteristics:</p>
+        <select name="id_tags" id="tags" class="select" required>
 
-<select name="id_tags" id="tags" class="select" required>
+          <option value="60a627cf76bdb327604215b5">Family-friendly</option>
+          <option value="60a627cf76bdb327604215b6">Food</option>
+          <option value="60a668adc142cc77c1001728">Hiking</option>
+          <option value="60a668adc142cc77c1001729">Swim</option>
+          <option value="60a668adc142cc77c100172a">Trek</option>
+          <option value="60a668adc142cc77c100172b">Animal-friendly</option>
+          <option value="60a668adc142cc77c100172c">Culture</option>
+          <option value="60a668adc142cc77c100172d">Children-friendly</option>
+          <option value="60a668adc142cc77c100172e">Romantic</option>
 
-  <option value="60a627cf76bdb327604215b5">Family-friendly</option>
-  <option value="60a627cf76bdb327604215b6">Food</option>
-  <option value="60a668adc142cc77c1001728">Hiking</option>
-  <option value="60a668adc142cc77c1001729">Swim</option>
-  <option value="60a668adc142cc77c100172a">Trek</option>
-  <option value="60a668adc142cc77c100172b">Animal-friendly</option>
-  <option value="60a668adc142cc77c100172c">Culture</option>
-  <option value="60a668adc142cc77c100172d">Children-friendly</option>
-  <option value="60a668adc142cc77c100172e">Romantic</option>
+        </select>
 
-</select>
-
+      </div>
+      <div class="form-add-edit-blocks">
+        <label for="name">Description:</label>
+        <textarea
+          type="text"
+          id="description"
+          name="description"
+          required
+        ></textarea>
+      </div><br />
+      <button class="button-primary submit-btn">Submit</button>
+    </form>
+  </div>
 </div>
-<div class="form-add-edit-blocks">
- <label for="name">Description:</label>
-  <textarea type="text" id="description" name="description" required></textarea>
-</div><br>
-    <button class="button-primary submit-btn">Submit</button>
-  </form>
-</div>
-

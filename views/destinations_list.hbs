@@ -21,8 +21,8 @@
             <img class="city-thumbnail" src="https://www.easyjet.com/ejcms/cache/medialibrary/Images/JSS/Destinations/Hero/France_Bordeaux_3840x2160.jpg"
                  alt="Lyon"/>
         </div>
-    </div>
-    <div hidden class="map-container">
+  </div>
+    <div class="map-container">
         Carte Ici
     </div>
 </div>
@@ -35,28 +35,25 @@
 
 
 <div class="destinations-container">
+
     <div class="grid-container">
 
-{{#each newCitiesName}}
+        {{#each objetPhoto}}
 
-        <a href="/destinations/{{this}}" class="photo-and-cityname">
-            <h4 class="cityname">Paris</h4>
-            <img class="city-thumbnail" src="https://lp-cms-production.imgix.net/image_browser/Effiel%20Tower%20-%20Paris%20Highlights.jpg"
-                 alt="Paris"/>
+        <a href="/destinations/{{this.name}}" class="photo-and-cityname">
+            <h4 class="cityname">{{this.name}}</h4>
+            <img class="city-thumbnail" src="{{this.photo}}"
+                 alt="Photo of {{this.name}}"/>
         </a>
 
         {{/each}} 
-
         
     </div>
-    <div hidden class="map-container">
+
+    {{!-- <div class="map-container">
         Carte Ici
-    </div>
+    </div> --}}
+
 </div>
 
-
-<a href="/destinations/{{this}}">
-  <img class="activity-img" src="/images/temporary-logo.png" alt="Photo of {{this}}" />
-  <p class="activity-name">{{this}}</p>
-</a>
-
+{{/if}}
