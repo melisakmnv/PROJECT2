@@ -66,6 +66,7 @@ a {
 }
 .user_avatar img {
   max-width: 270px;
+  object-fit: cover;
 }
 
 

@@ -24,7 +24,7 @@ router.get("/edit", (req, res, next) => {
     .catch(next);
 });
 
-router.post("/edit", async (req, res, next) => {
+router.post("/edit", uploader.single("avatar"), async (req, res, next) => {
   try {
     const newUpdateUser = { ...req.body };
     const foundUsername = await UserModel.findOne({
@@ -38,6 +38,7 @@ router.post("/edit", async (req, res, next) => {
       //   req.flash("warning", "This email is already used");
       //   res.redirect('/dashboard/myprofile/edit');
     } else {
+      // if (req.file) newUpdateUser.avatar = req.file.path;
       await UserModel.findByIdAndUpdate(req.session.currentUser, req.body);
       req.flash("success", "Your profile has been updated !");
       res.redirect("/dashboard/myprofile");

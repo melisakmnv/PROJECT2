@@ -1,7 +1,7 @@
 <div class='profile_main_box'>
   <div class='profile_box'>
     <div class='user_avatar'></div>
-    <form method='post' action='/dashboard/myprofile/edit'>
+    <form method='post' action='/dashboard/myprofile/edit' enctype="multipart/form-data">
       <div>
         <label for='avatar'>Avatar : </label>
         <input name='avatar' id='avatar' type='file' value='{{currentUser.avatar}}' />
