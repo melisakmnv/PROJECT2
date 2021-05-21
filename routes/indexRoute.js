@@ -77,12 +77,10 @@ router.get("/whoarewe", (req, res) => {
 });
 
 
-//MAP
-
-//WHO ARE WE
-router.get("/map", (req, res) => {
-    res.render("dashboard/myProfile.hbs", { user: req.user });
-  });
+// //MAP
+// router.get("/map", (req, res) => {
+//     res.render("dashboard/myProfile.hbs", { user: req.user });
+//   });
 
 
 //SEARCH BAR ???

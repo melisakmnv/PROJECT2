@@ -1,20 +1,26 @@
+#dashboard-carousel-container {
+    height: 32vh;
+}
+
+#dashboard-carousel-container h1 {
+    text-align: center;
+}
+
 #dashboard-menu {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 80vh;
-    top: 10vh;
-    position: relative;
+    height:50vh;
 }
 
 
 .dashboard-img-1 {
-    width: 60%;
+    width: 300px;
 }
 
 .dashboard-img-2 {
-    width: 20%;
-    margin: 5%;
+    width: 200px;
+    margin: 52px;
 }
 
 .dashboard-img-3 {
@@ -23,8 +29,8 @@
 }
 
 .dashboard-img-4 {
-    width: 83%;
-    margin: 4%;
+    width: 270px;
+    margin: 20px;
 }
 
 .dashboard-options {

@@ -1,12 +1,20 @@
 <div>MY WISHLIST</div>
 
-    {{#each user.wishlist}}
+{{#each user.wishlist}}
 
-		<div class="wishlist-card">
-		
-    	<div class="carousel-city-name">{{this.city}}</div>
-      <img class="carousel-city-photo" src="{{this.photo_city}}" alt="Photo of {{this.city}}"/>
+<div class="destinations-container">
+  <div class="grid-container">
+    <div class="photo-and-cityname">
+      <h4 class="cityname">{{destinations.city_name}}</h4>
+      <img
+        class="city-thumbnail"
+        src="{{destinations.city_photo}}"
+        alt="Photo of {{destinations.city_name}}"
+      />
+    </div>
 
-		</div>
+  </div>
 
-    {{/each}}
+</div>
+
+{{/each}}

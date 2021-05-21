@@ -80,13 +80,15 @@ router.get('/activity_add', (req, res, next) => {
   TagModel.find().then((tags) =>
     res.render('destination/destinations_add.hbs', { tags })
   )
-  .catch(next);
+  // .catch(next);
 });
 
 router.post('/activity_add', uploader.single("photo"), (req, res, next) => {
-  const activity = { ...req.body };
+  
   console.log("REQ BODY");
   console.log(req.body);
+  
+  const activity = { ...req.body };
 
 if(activity.category === "City") {
 
