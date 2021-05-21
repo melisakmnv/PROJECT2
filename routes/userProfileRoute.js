@@ -24,15 +24,6 @@ router.get("/edit", (req, res, next) => {
     .catch(next);
 });
 
-// router.post('/edit', (req, res, next) => {
-//   const foundUsername =
-//   UserModel.findByIdAndUpdate(req.session.currentUser, req.body)
-//   .then((currentUser) => {
-//     res.redirect('/dashboard/myprofile')
-//   })
-//   .catch(next);
-// })
-
 router.post("/edit", async (req, res, next) => {
   try {
     const newUpdateUser = { ...req.body };
