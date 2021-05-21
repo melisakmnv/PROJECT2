@@ -4,7 +4,7 @@ const router = express.Router();
 const UserModel = require("./../models/userModel");
 const uploader = require("./../config/cloudinary");
 
-// Hello
+
 
 router.get("/", (req, res, next) => {
   UserModel.findById(req.session.currentUser)
