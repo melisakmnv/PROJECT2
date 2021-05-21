@@ -9,7 +9,7 @@
       enctype="multipart/form-data"
     >
 
-      <h3 class="form-add-destination-title">Add a destination</h3>
+      <h3 class="form-add-destination-title">Edit the destination</h3>
 
 
         {{! CATEGORY }}
@@ -85,8 +85,8 @@
 
       {{!-- <div class="form-add-edit-blocks"> --}}
        <label for="id_tags" class="label-price label">Tag:</label>
-        <select name="id_tags" id="tags" class="select" value="{{activity.id_tags}}" required>
-
+        <select name="id_tags" id="tags" class="select" required>
+          <option value="-1" disabled selected>{{activity.id_tags}}</option>
           <option value="60a627cf76bdb327604215b5">Family-friendly</option>
           <option value="60a627cf76bdb327604215b6">Food</option>
           <option value="60a668adc142cc77c1001728">Hiking</option>
